@@ -51,13 +51,61 @@
             
   <div class="section" id="darmon-points">
 <h1>Darmon Points<a class="headerlink" href="#darmon-points" title="Permalink to this headline">¶</a></h1>
-<p>This package computes with Darmon points.</p>
-<p>To use this module, you need to import it:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">darmonpoints</span> <span class="k">import</span> <span class="o">*</span>
-</pre></div>
-</div>
-<p>This reference shows a minimal example of documentation of the
-Sage sample package following SageMath guidelines.</p>
+<p>For installation and basic usage instructions please see the main Github repository (<a class="reference external" href="https://github.com/mmasdeu/darmonpoints">https://github.com/mmasdeu/darmonpoints</a>).</p>
+<p>The <strong>darmonpoints</strong> package can compute many different types of what is known as Darmon points. These are known as <em>Stark-Heegner</em> points in some literature, and originated in <a class="reference internal" href="#darmon" id="id1">[Darmon]</a>. Subsequent generalizations were introduced by <a class="reference internal" href="#greenberg" id="id2">[Greenberg]</a> and <a class="reference internal" href="#trifkovic" id="id3">[Trifkovic]</a>. This has been generalized by <a class="reference internal" href="#gms1" id="id4">[GMS1]</a> to elliptic curves defined over number fields of arbitrary signature. Darmon points are attached to triples <span class="math">\((F,E,K)\)</span>, where <span class="math">\(F\)</span> is a number field, <span class="math">\(E/F\)</span> is an elliptic curve defined over <span class="math">\(F\)</span>, and <span class="math">\(K/F\)</span> is a quadratic extension. These triples must satisfy certain conditions for Darmon points to be attached to them. The article <a class="reference internal" href="#gms1" id="id5">[GMS1]</a> contains an overview of all of this. We include also a variation used in <a class="reference internal" href="#kp" id="id6">[KP]</a>.</p>
+<p>The <strong>darmonpoints</strong> package can also compute equations for some elliptic curves <span class="math">\(E/F\)</span> defined over number fields <span class="math">\(F\)</span>, as long as certain conditions are satisfied. Namely:</p>
+<ol class="arabic simple">
+<li><span class="math">\(F\)</span> has narrow class number <span class="math">\(1\)</span>.</li>
+<li>if <span class="math">\(N\)</span> is the conductor of the elliptic curve, it must admit a factorization of the form <span class="math">\(N = PDM\)</span>, where:<ol class="loweralpha">
+<li><span class="math">\(P\)</span>, <span class="math">\(D\)</span> and <span class="math">\(M\)</span> are relative coprime.</li>
+<li><span class="math">\(P\)</span> is a prime ideal of <span class="math">\(F\)</span> of prime norm.</li>
+<li><span class="math">\(D\)</span> is the discriminant of a quaternion algebra over <span class="math">\(F\)</span> which is split at only one infinite place.</li>
+</ol>
+</li>
+</ol>
+<p>Finally, we include the module <em>padicperiods</em>, which allows for the computation of <span class="math">\(p\)</span>-adic periods attached to two-dimensional components of the cohomology of the same arithmetic groups, and which has allowed us to find the corresponding abelian surfaces in some cases (see <a class="reference internal" href="#gm" id="id7">[GM]</a>).</p>
+<table class="docutils citation" frame="void" id="darmon" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[Darmon]</a></td><td>H.Darmon. <em>Integration on Hp x H and arithmetic applications</em>. Annals of Math.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="greenberg" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[Greenberg]</a></td><td>M.Greenberg. <em>Stark-Heegner points and the cohomology of quaternionic Shimura varieties</em>. Duke Math.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="gm" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[GM]</a></td><td>X.Guitart, M.Masdeu. <em>Periods of modular GL2-type abelian varieties and p-adic integration</em>. Experimental Mathematics.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="gms1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[GMS1]</td><td><em>(<a class="fn-backref" href="#id4">1</a>, <a class="fn-backref" href="#id5">2</a>)</em> X.Guitart, M.Masdeu, M.H.Sengun. <em>Darmon points on elliptic curves over number fields of arbitrary signature</em>. Proc. LMS.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="gms2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[GMS2]</td><td>X.Guitart, M.Masdeu, M.H.Sengun. <em>Uniformization of modular elliptic curves via p-adic methods</em>. Journal of Algebra.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="kp" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[KP]</a></td><td>A.Pacetti, D.Kohen (with an appendix by M.Masdeu) <em>On Heegner points for primes of additive reduction ramifying in the base field</em>. Transactions of the AMS.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="trifkovic" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[Trifkovic]</a></td><td>M.Trifkovic. <em>Stark-Heegner points on elliptic curves defined over imaginary quadratic fields</em>. Duke Math.</td></tr>
+</tbody>
+</table>
 <p>This work is licensed under a <a class="reference external" href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike
 3.0 License</a>.</p>
 <div class="toctree-wrapper compound">
