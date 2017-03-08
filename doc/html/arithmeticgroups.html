@@ -1,0 +1,869 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Arithmetic group elements &mdash; Darmon Points 3.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/MathJax.js?config=TeX-AMS_HTML-full,../mathjax_sage.js"></script>
+    <link rel="top" title="Darmon Points 3.0 documentation" href="index.html" />
+    <link rel="next" title="Abstract cohomology class" href="cohomology.html" />
+    <link rel="prev" title="Darmon Points" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cohomology.html" title="Abstract cohomology class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Darmon Points"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Darmon Points 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-darmonpoints.arithgroup_element">
+<span id="arithmetic-group-elements"></span><h1>Arithmetic group elements<a class="headerlink" href="#module-darmonpoints.arithgroup_element" title="Permalink to this headline">¶</a></h1>
+<p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+<dl class="class">
+<dt id="darmonpoints.arithgroup_element.ArithGroupElement">
+<em class="property">class </em><code class="descclassname">darmonpoints.arithgroup_element.</code><code class="descname">ArithGroupElement</code><span class="sig-paren">(</span><em>parent</em>, <em>word_rep=None</em>, <em>quaternion_rep=None</em>, <em>check=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup_element.ArithGroupElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.structure.element.MultiplicativeGroupElement</span></code></p>
+<p>Initialize.</p>
+<blockquote>
+<div><p>INPUT:</p>
+<ul class="simple">
+<li>a list of the form [(g1,a1),(g2,a2),...,(gn,an)] where the gi are indices</li>
+</ul>
+<p>refering to fixed generators, and the ai are integers, or
+an element of the quaternion algebra <code class="docutils literal"><span class="pre">self.parent().quaternion_algebra()</span></code></p>
+</div></blockquote>
+<dl class="method">
+<dt id="darmonpoints.arithgroup_element.ArithGroupElement.check_consistency">
+<code class="descname">check_consistency</code><span class="sig-paren">(</span><em>q=None</em>, <em>wd=None</em>, <em>txt=''</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup_element.ArithGroupElement.check_consistency" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup_element.ArithGroupElement.conjugate_by">
+<code class="descname">conjugate_by</code><span class="sig-paren">(</span><em>w</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup_element.ArithGroupElement.conjugate_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup_element.ArithGroupElement.embed">
+<code class="descname">embed</code><span class="sig-paren">(</span><em>prec</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup_element.ArithGroupElement.embed" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<span class="go">....:     def __init__(self, x):</span>
+<span class="go">....:         self._x = x</span>
+<span class="go">....:     @cached_method</span>
+<span class="go">....:     def f(self,*args):</span>
+<span class="go">....:         return self._x^2</span>
+<span class="gp">sage: </span><span class="n">a</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{}</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+<span class="go">4</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{((), ()): 4}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup_element.ArithGroupElement.find_bounding_cycle">
+<code class="descname">find_bounding_cycle</code><span class="sig-paren">(</span><em>G</em>, <em>npow=1</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup_element.ArithGroupElement.find_bounding_cycle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use recursively that:
+- x^a g = a x + g - del(x^a|g) - del(x|(x + x^2 + ... + x^(a-1)))
+- x^(-a) g = -a x + g + del(1|1) + del(x^(a)|(x^-a)) - del(x^(-a)|g) + del(x|(x + x^2 + ... + x^(a-1)))</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup_element.ArithGroupElement.is_one">
+<code class="descname">is_one</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup_element.ArithGroupElement.is_one" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup_element.ArithGroupElement.is_scalar">
+<code class="descname">is_scalar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup_element.ArithGroupElement.is_scalar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup_element.ArithGroupElement.is_trivial_in_abelianization">
+<code class="descname">is_trivial_in_abelianization</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup_element.ArithGroupElement.is_trivial_in_abelianization" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup_element.ArithGroupElement.quaternion_rep">
+<code class="descname">quaternion_rep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup_element.ArithGroupElement.quaternion_rep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the quaternion representation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup_element.ArithGroupElement.size">
+<code class="descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup_element.ArithGroupElement.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup_element.ArithGroupElement.word_rep">
+<code class="descname">word_rep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup_element.ArithGroupElement.word_rep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a word in the generators of <span class="math">\(\Gamma\)</span> representing the given quaternion <span class="math">\(x\)</span>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-darmonpoints.arithgroup_nscartan">
+<span id="non-split-cartan"></span><h1>Non-split Cartan<a class="headerlink" href="#module-darmonpoints.arithgroup_nscartan" title="Permalink to this headline">¶</a></h1>
+<p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+<dl class="class">
+<dt id="darmonpoints.arithgroup_nscartan.ArithGroup_nscartan">
+<em class="property">class </em><code class="descclassname">darmonpoints.arithgroup_nscartan.</code><code class="descname">ArithGroup_nscartan</code><span class="sig-paren">(</span><em>q</em>, <em>level</em>, <em>info_magma=None</em>, <em>grouptype=None</em>, <em>magma=None</em>, <em>compute_presentation=True</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup_nscartan.ArithGroup_nscartan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#darmonpoints.arithgroup.ArithGroup_generic" title="darmonpoints.arithgroup.ArithGroup_generic"><code class="xref py py-class docutils literal"><span class="pre">darmonpoints.arithgroup.ArithGroup_generic</span></code></a></p>
+<dl class="attribute">
+<dt id="darmonpoints.arithgroup_nscartan.ArithGroup_nscartan.Element">
+<code class="descname">Element</code><a class="headerlink" href="#darmonpoints.arithgroup_nscartan.ArithGroup_nscartan.Element" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">ArithGroupElement</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup_nscartan.ArithGroup_nscartan.element_of_norm">
+<code class="descname">element_of_norm</code><span class="sig-paren">(</span><em>N</em>, <em>use_magma=False</em>, <em>return_all=False</em>, <em>radius=None</em>, <em>max_elements=None</em>, <em>local_condition=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup_nscartan.ArithGroup_nscartan.element_of_norm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup_nscartan.ArithGroup_nscartan.embed_order">
+<code class="descname">embed_order</code><span class="sig-paren">(</span><em>p</em>, <em>K</em>, <em>prec</em>, <em>outfile=None</em>, <em>return_all=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup_nscartan.ArithGroup_nscartan.embed_order" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup_nscartan.ArithGroup_nscartan.generate_wp_candidates">
+<code class="descname">generate_wp_candidates</code><span class="sig-paren">(</span><em>p</em>, <em>ideal_p</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup_nscartan.ArithGroup_nscartan.generate_wp_candidates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup_nscartan.ArithGroup_nscartan.get_word_rep">
+<code class="descname">get_word_rep</code><span class="sig-paren">(</span><em>delta</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup_nscartan.ArithGroup_nscartan.get_word_rep" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup_nscartan.ArithGroup_nscartan.non_positive_unit">
+<code class="descname">non_positive_unit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup_nscartan.ArithGroup_nscartan.non_positive_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.arithgroup_nscartan.lift">
+<code class="descclassname">darmonpoints.arithgroup_nscartan.</code><code class="descname">lift</code><span class="sig-paren">(</span><em>A</em>, <em>N</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup_nscartan.lift" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lift a matrix A from SL_m(Z/NZ) to SL_m(Z).</p>
+<p>Follows Shimura, Lemma 1.38, p21.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-darmonpoints.arithgroup">
+<span id="arithmetic-group"></span><h1>Arithmetic group<a class="headerlink" href="#module-darmonpoints.arithgroup" title="Permalink to this headline">¶</a></h1>
+<p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+<dl class="class">
+<dt id="darmonpoints.arithgroup.Abelianization">
+<em class="property">class </em><code class="descclassname">darmonpoints.arithgroup.</code><code class="descname">Abelianization</code><span class="sig-paren">(</span><em>G</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.Abelianization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cohomology.html#darmonpoints.homology_abstract.HomologyGroup" title="darmonpoints.homology_abstract.HomologyGroup"><code class="xref py py-class docutils literal"><span class="pre">darmonpoints.homology_abstract.HomologyGroup</span></code></a></p>
+<dl class="method">
+<dt id="darmonpoints.arithgroup.Abelianization.ab_to_G">
+<code class="descname">ab_to_G</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.Abelianization.ab_to_G" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.Abelianization.abelian_group">
+<code class="descname">abelian_group</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.Abelianization.abelian_group" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.Abelianization.abelian_invariants">
+<code class="descname">abelian_invariants</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.Abelianization.abelian_invariants" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.Abelianization.ambient">
+<code class="descname">ambient</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.Abelianization.ambient" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="darmonpoints.arithgroup.ArithGroup_generic">
+<em class="property">class </em><code class="descclassname">darmonpoints.arithgroup.</code><code class="descname">ArithGroup_generic</code><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_generic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.groups.group.AlgebraicGroup</span></code></p>
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_generic.abelianization">
+<code class="descname">abelianization</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_generic.abelianization" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<span class="go">....:     def __init__(self, x):</span>
+<span class="go">....:         self._x = x</span>
+<span class="go">....:     @cached_method</span>
+<span class="go">....:     def f(self):</span>
+<span class="go">....:         return self._x^2</span>
+<span class="gp">sage: </span><span class="n">a</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span>
+<span class="go">None</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+<span class="go">4</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_generic.base_field">
+<code class="descname">base_field</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_generic.base_field" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_generic.base_ring">
+<code class="descname">base_ring</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_generic.base_ring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_generic.calculate_weight_zero_word">
+<code class="descname">calculate_weight_zero_word</code><span class="sig-paren">(</span><em>xlist</em>, <em>separated=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_generic.calculate_weight_zero_word" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_generic.check_word">
+<code class="descname">check_word</code><span class="sig-paren">(</span><em>delta</em>, <em>wd</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_generic.check_word" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_generic.clear_cache">
+<code class="descname">clear_cache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_generic.clear_cache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_generic.decompose_into_commutators">
+<code class="descname">decompose_into_commutators</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_generic.decompose_into_commutators" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_generic.enumerate_elements">
+<code class="descname">enumerate_elements</code><span class="sig-paren">(</span><em>max_length=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_generic.enumerate_elements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_generic.gen">
+<code class="descname">gen</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_generic.gen" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_generic.generate_wp_candidates">
+<code class="descname">generate_wp_candidates</code><span class="sig-paren">(</span><em>p</em>, <em>ideal_p</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_generic.generate_wp_candidates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_generic.gens">
+<code class="descname">gens</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_generic.gens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_generic.get_archimedean_embedding">
+<code class="descname">get_archimedean_embedding</code><span class="sig-paren">(</span><em>prec</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_generic.get_archimedean_embedding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an embedding of the quaternion algebra
+into the algebra of 2x2 matrices with coefficients in <span class="math">\(\QQ_p\)</span>.</p>
+<p>INPUT:</p>
+<ul class="simple">
+<li>prec &#8211; Integer. The precision of the splitting.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_generic.get_hecke_reps">
+<code class="descname">get_hecke_reps</code><span class="sig-paren">(</span><em>l</em>, <em>use_magma=True</em>, <em>g0=None</em>, <em>progress=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_generic.get_hecke_reps" title="Permalink to this definition">¶</a></dt>
+<dd><p>TESTS:</p>
+<p>sage: from darmonpoints.sarithgroup import ArithGroup
+sage: magma.eval(&#8216;SetSeed(2000000)&#8217;) #  optional - magma
+&#8216;&#8217;
+sage: G = ArithGroup(QQ,6,None,5,magma=Magma()) # optional - magma
+sage: reps = G.get_hecke_reps(11) # optional - magma</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_generic.get_hecke_ti">
+<code class="descname">get_hecke_ti</code><span class="sig-paren">(</span><em>gk1</em>, <em>gamma</em>, <em>l=None</em>, <em>use_magma=False</em>, <em>conservative=False</em>, <em>reps=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_generic.get_hecke_ti" title="Permalink to this definition">¶</a></dt>
+<dd><p>INPUT:</p>
+<ul class="simple">
+<li>gk1 - a quaternion element of norm l</li>
+<li>gamma - an element of G</li>
+<li>If l is None, it is assumed to be p.</li>
+</ul>
+<p>OUTPUT:</p>
+<ul class="simple">
+<li>t_{gk1}(gamma)</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_generic.get_relation_matrix">
+<code class="descname">get_relation_matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_generic.get_relation_matrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_generic.get_relation_words">
+<code class="descname">get_relation_words</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_generic.get_relation_words" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_generic.get_weight_vector">
+<code class="descname">get_weight_vector</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_generic.get_weight_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_generic.one">
+<code class="descname">one</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_generic.one" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_generic.quaternion_algebra">
+<code class="descname">quaternion_algebra</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_generic.quaternion_algebra" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="darmonpoints.arithgroup.ArithGroup_nf_quaternion">
+<em class="property">class </em><code class="descclassname">darmonpoints.arithgroup.</code><code class="descname">ArithGroup_nf_quaternion</code><span class="sig-paren">(</span><em>base</em>, <em>a</em>, <em>b</em>, <em>level</em>, <em>info_magma=None</em>, <em>grouptype='PSL2'</em>, <em>magma=None</em>, <em>timeout=0</em>, <em>compute_presentation=True</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_nf_quaternion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#darmonpoints.arithgroup.ArithGroup_generic" title="darmonpoints.arithgroup.ArithGroup_generic"><code class="xref py py-class docutils literal"><span class="pre">darmonpoints.arithgroup.ArithGroup_generic</span></code></a></p>
+<dl class="attribute">
+<dt id="darmonpoints.arithgroup.ArithGroup_nf_quaternion.Element">
+<code class="descname">Element</code><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_nf_quaternion.Element" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">ArithGroupElement</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_nf_quaternion.compute_quadratic_embedding">
+<code class="descname">compute_quadratic_embedding</code><span class="sig-paren">(</span><em>K</em>, <em>return_generator=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_nf_quaternion.compute_quadratic_embedding" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_nf_quaternion.element_of_norm">
+<code class="descname">element_of_norm</code><span class="sig-paren">(</span><em>N</em>, <em>use_magma=True</em>, <em>return_all=False</em>, <em>radius=-1</em>, <em>max_elements=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_nf_quaternion.element_of_norm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_nf_quaternion.element_of_prime_norm">
+<code class="descname">element_of_prime_norm</code><span class="sig-paren">(</span><em>max_norm</em>, <em>radius=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_nf_quaternion.element_of_prime_norm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_nf_quaternion.embed_order">
+<code class="descname">embed_order</code><span class="sig-paren">(</span><em>p</em>, <em>K</em>, <em>prec</em>, <em>outfile=None</em>, <em>return_all=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_nf_quaternion.embed_order" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_nf_quaternion.get_word_rep_aurel">
+<code class="descname">get_word_rep_aurel</code><span class="sig-paren">(</span><em>gamma</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_nf_quaternion.get_word_rep_aurel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_nf_quaternion.get_word_rep_jv">
+<code class="descname">get_word_rep_jv</code><span class="sig-paren">(</span><em>delta</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_nf_quaternion.get_word_rep_jv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_nf_quaternion.non_positive_unit">
+<code class="descname">non_positive_unit</code><span class="sig-paren">(</span><em>radius=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_nf_quaternion.non_positive_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="darmonpoints.arithgroup.ArithGroup_rationalmatrix">
+<em class="property">class </em><code class="descclassname">darmonpoints.arithgroup.</code><code class="descname">ArithGroup_rationalmatrix</code><span class="sig-paren">(</span><em>level</em>, <em>info_magma=None</em>, <em>grouptype=None</em>, <em>magma=None</em>, <em>compute_presentation=True</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_rationalmatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#darmonpoints.arithgroup.ArithGroup_generic" title="darmonpoints.arithgroup.ArithGroup_generic"><code class="xref py py-class docutils literal"><span class="pre">darmonpoints.arithgroup.ArithGroup_generic</span></code></a></p>
+<dl class="attribute">
+<dt id="darmonpoints.arithgroup.ArithGroup_rationalmatrix.Element">
+<code class="descname">Element</code><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_rationalmatrix.Element" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">ArithGroupElement</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_rationalmatrix.element_of_norm">
+<code class="descname">element_of_norm</code><span class="sig-paren">(</span><em>N</em>, <em>use_magma=False</em>, <em>return_all=False</em>, <em>radius=None</em>, <em>max_elements=None</em>, <em>local_condition=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_rationalmatrix.element_of_norm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_rationalmatrix.embed_order">
+<code class="descname">embed_order</code><span class="sig-paren">(</span><em>p</em>, <em>K</em>, <em>prec</em>, <em>orientation=None</em>, <em>use_magma=True</em>, <em>outfile=None</em>, <em>return_all=False</em>, <em>extra_conductor=1</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_rationalmatrix.embed_order" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_rationalmatrix.embed_order_legacy">
+<code class="descname">embed_order_legacy</code><span class="sig-paren">(</span><em>p</em>, <em>K</em>, <em>prec</em>, <em>outfile=None</em>, <em>return_all=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_rationalmatrix.embed_order_legacy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_rationalmatrix.generate_wp_candidates">
+<code class="descname">generate_wp_candidates</code><span class="sig-paren">(</span><em>p</em>, <em>ideal_p</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_rationalmatrix.generate_wp_candidates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_rationalmatrix.get_word_rep">
+<code class="descname">get_word_rep</code><span class="sig-paren">(</span><em>delta</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_rationalmatrix.get_word_rep" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_rationalmatrix.non_positive_unit">
+<code class="descname">non_positive_unit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_rationalmatrix.non_positive_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="darmonpoints.arithgroup.ArithGroup_rationalquaternion">
+<em class="property">class </em><code class="descclassname">darmonpoints.arithgroup.</code><code class="descname">ArithGroup_rationalquaternion</code><span class="sig-paren">(</span><em>discriminant</em>, <em>level</em>, <em>info_magma=None</em>, <em>grouptype=None</em>, <em>magma=None</em>, <em>compute_presentation=True</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_rationalquaternion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#darmonpoints.arithgroup.ArithGroup_generic" title="darmonpoints.arithgroup.ArithGroup_generic"><code class="xref py py-class docutils literal"><span class="pre">darmonpoints.arithgroup.ArithGroup_generic</span></code></a></p>
+<dl class="attribute">
+<dt id="darmonpoints.arithgroup.ArithGroup_rationalquaternion.Element">
+<code class="descname">Element</code><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_rationalquaternion.Element" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">ArithGroupElement</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_rationalquaternion.compute_quadratic_embedding">
+<code class="descname">compute_quadratic_embedding</code><span class="sig-paren">(</span><em>K</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_rationalquaternion.compute_quadratic_embedding" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_rationalquaternion.element_of_norm">
+<code class="descname">element_of_norm</code><span class="sig-paren">(</span><em>N</em>, <em>use_magma=True</em>, <em>return_all=False</em>, <em>radius=-1</em>, <em>max_elements=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_rationalquaternion.element_of_norm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_rationalquaternion.embed_order">
+<code class="descname">embed_order</code><span class="sig-paren">(</span><em>p</em>, <em>K</em>, <em>prec</em>, <em>outfile=None</em>, <em>return_all=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_rationalquaternion.embed_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>sage: from darmonpoints.sarithgroup import ArithGroup
+sage: G = ArithGroup(QQ,6,magma=Magma()) # optional - magma
+sage: f = G.embed_order(23,20) # optional - magma</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_rationalquaternion.get_word_rep">
+<code class="descname">get_word_rep</code><span class="sig-paren">(</span><em>delta</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_rationalquaternion.get_word_rep" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.arithgroup.ArithGroup_rationalquaternion.non_positive_unit">
+<code class="descname">non_positive_unit</code><span class="sig-paren">(</span><em>radius=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.ArithGroup_rationalquaternion.non_positive_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="darmonpoints.arithgroup.FaceRel">
+<em class="property">class </em><code class="descclassname">darmonpoints.arithgroup.</code><code class="descname">FaceRel</code><span class="sig-paren">(</span><em>center=None</em>, <em>radius=None</em>, <em>mat=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup.FaceRel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.structure.sage_object.SageObject</span></code></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-darmonpoints.sarithgroup">
+<span id="s-arithmetic-group"></span><h1>S-arithmetic group<a class="headerlink" href="#module-darmonpoints.sarithgroup" title="Permalink to this headline">¶</a></h1>
+<p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+<dl class="function">
+<dt id="darmonpoints.sarithgroup.ArithGroup">
+<code class="descclassname">darmonpoints.sarithgroup.</code><code class="descname">ArithGroup</code><span class="sig-paren">(</span><em>base</em>, <em>discriminant</em>, <em>abtuple=None</em>, <em>level=1</em>, <em>info_magma=None</em>, <em>grouptype=None</em>, <em>magma=None</em>, <em>compute_presentation=True</em>, <em>timeout=0</em>, <em>nscartan=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.ArithGroup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="darmonpoints.sarithgroup.BTEdge">
+<em class="property">class </em><code class="descclassname">darmonpoints.sarithgroup.</code><code class="descname">BTEdge</code><span class="sig-paren">(</span><em>reverse</em>, <em>gamma</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BTEdge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.structure.sage_object.SageObject</span></code></p>
+<p>A BTEdge is represented by an element <span class="math">\(gamma\)</span>, and then a flag called <span class="math">\(reverse\)</span>.
+The flag reverse indicates whether we refer to the opposite edge of the one
+represented by <span class="math">\(gamma\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.sarithgroup.BigArithGroup">
+<code class="descclassname">darmonpoints.sarithgroup.</code><code class="descname">BigArithGroup</code><span class="sig-paren">(</span><em>p</em>, <em>quat_data</em>, <em>level</em>, <em>base=None</em>, <em>grouptype=None</em>, <em>seed=None</em>, <em>use_sage_db=False</em>, <em>outfile=None</em>, <em>magma=None</em>, <em>timeout=0</em>, <em>logfile=None</em>, <em>use_shapiro=True</em>, <em>character=None</em>, <em>nscartan=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class">
+<em class="property">class </em><code class="descclassname">darmonpoints.sarithgroup.</code><code class="descname">BigArithGroup_class</code><span class="sig-paren">(</span><em>base</em>, <em>p</em>, <em>discriminant</em>, <em>abtuple=None</em>, <em>level=1</em>, <em>grouptype=None</em>, <em>seed=None</em>, <em>outfile=None</em>, <em>magma=None</em>, <em>timeout=0</em>, <em>use_shapiro=True</em>, <em>character=None</em>, <em>nscartan=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.groups.group.AlgebraicGroup</span></code></p>
+<p>This class holds information about the group <span class="math">\(\Gamma\)</span>: a finite
+presentation for it, a solution to the word problem,...</p>
+<p>Initializes the group attached to a <span class="math">\(\ZZ[1/p]\)</span>-order of the rational quaternion algebra of
+discriminant <span class="math">\(discriminant\)</span> and  level <span class="math">\(n\)</span>.</p>
+<p>TESTS:</p>
+<blockquote>
+<div>sage: from darmonpoints.sarithgroup import BigArithGroup
+sage: GS = BigArithGroup(7,6,1,outfile=&#8217;/tmp/darmonpoints.tmp&#8217;,use_shapiro=False) #  optional - magma
+sage: G = GS.small_group() #  optional - magma
+sage: a = G([2,2,1,1,1,-3]) #  optional - magma
+sage: b = G([2,2,2])    #  optional - magma
+sage: c = G([3])        #  optional - magma
+sage: print a * b # random #  optional - magma
+-236836769/2 + 120098645/2*i - 80061609/2*j - 80063439/2*k
+sage: b.quaternion_rep # random #  optional - magma
+846 - 429*i + 286*j + 286*k</div></blockquote>
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.Gpn_Obasis">
+<code class="descname">Gpn_Obasis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.Gpn_Obasis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.Gpn_denominator">
+<code class="descname">Gpn_denominator</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.Gpn_denominator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.base_ring_local_embedding">
+<code class="descname">base_ring_local_embedding</code><span class="sig-paren">(</span><em>prec</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.base_ring_local_embedding" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.clear_cache">
+<code class="descname">clear_cache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.clear_cache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.coset_reps">
+<code class="descname">coset_reps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.coset_reps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.do_tilde">
+<code class="descname">do_tilde</code><span class="sig-paren">(</span><em>g</em>, <em>wp=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.do_tilde" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.embed">
+<code class="descname">embed</code><span class="sig-paren">(</span><em>q</em>, <em>prec</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.embed" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<span class="go">....:     def __init__(self, x):</span>
+<span class="go">....:         self._x = x</span>
+<span class="go">....:     @cached_method</span>
+<span class="go">....:     def f(self,*args):</span>
+<span class="go">....:         return self._x^2</span>
+<span class="gp">sage: </span><span class="n">a</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{}</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+<span class="go">4</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{((), ()): 4}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.get_BT_reps">
+<code class="descname">get_BT_reps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.get_BT_reps" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<span class="go">....:     def __init__(self, x):</span>
+<span class="go">....:         self._x = x</span>
+<span class="go">....:     @cached_method</span>
+<span class="go">....:     def f(self):</span>
+<span class="go">....:         return self._x^2</span>
+<span class="gp">sage: </span><span class="n">a</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span>
+<span class="go">None</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+<span class="go">4</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.get_BT_reps_twisted">
+<code class="descname">get_BT_reps_twisted</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.get_BT_reps_twisted" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<span class="go">....:     def __init__(self, x):</span>
+<span class="go">....:         self._x = x</span>
+<span class="go">....:     @cached_method</span>
+<span class="go">....:     def f(self):</span>
+<span class="go">....:         return self._x^2</span>
+<span class="gp">sage: </span><span class="n">a</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span>
+<span class="go">None</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+<span class="go">4</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.get_Up_reps">
+<code class="descname">get_Up_reps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.get_Up_reps" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<span class="go">....:     def __init__(self, x):</span>
+<span class="go">....:         self._x = x</span>
+<span class="go">....:     @cached_method</span>
+<span class="go">....:     def f(self):</span>
+<span class="go">....:         return self._x^2</span>
+<span class="gp">sage: </span><span class="n">a</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span>
+<span class="go">None</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+<span class="go">4</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.get_coset_ti">
+<code class="descname">get_coset_ti</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.get_coset_ti" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<span class="go">....:     def __init__(self, x):</span>
+<span class="go">....:         self._x = x</span>
+<span class="go">....:     @cached_method</span>
+<span class="go">....:     def f(self,*args):</span>
+<span class="go">....:         return self._x^2</span>
+<span class="gp">sage: </span><span class="n">a</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{}</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+<span class="go">4</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{((), ()): 4}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.get_covering">
+<code class="descname">get_covering</code><span class="sig-paren">(</span><em>depth</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.get_covering" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.get_embedding">
+<code class="descname">get_embedding</code><span class="sig-paren">(</span><em>prec</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.get_embedding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an embedding of the quaternion algebra
+into the algebra of 2x2 matrices with coefficients in <span class="math">\(\QQ_p\)</span>.</p>
+<p>INPUT:</p>
+<ul class="simple">
+<li>prec &#8211; Integer. The precision of the splitting.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.get_homology_kernel">
+<code class="descname">get_homology_kernel</code><span class="sig-paren">(</span><em>hecke_data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.get_homology_kernel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.get_pseudo_orthonormal_homology">
+<code class="descname">get_pseudo_orthonormal_homology</code><span class="sig-paren">(</span><em>cocycles</em>, <em>hecke_data=None</em>, <em>outfile=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.get_pseudo_orthonormal_homology" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.inverse_shapiro">
+<code class="descname">inverse_shapiro</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.inverse_shapiro" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.is_in_Gpn_order">
+<code class="descname">is_in_Gpn_order</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.is_in_Gpn_order" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.large_group">
+<code class="descname">large_group</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.large_group" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.local_splitting">
+<code class="descname">local_splitting</code><span class="sig-paren">(</span><em>prec</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.local_splitting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds an embedding of the definite quaternion algebra
+into the algebra of 2x2 matrices with coefficients in <span class="math">\(\QQ_p\)</span>.</p>
+<p>INPUT:</p>
+<ul class="simple">
+<li>prec &#8211; Integer. The precision of the splitting.</li>
+</ul>
+<p>OUTPUT:</p>
+<ul class="simple">
+<li>Matrices I, J, K giving the splitting.</li>
+</ul>
+<p>EXAMPLES:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="kn">from</span> <span class="nn">darmonpoints.sarithgroup</span> <span class="kn">import</span> <span class="n">BigArithGroup</span>
+<span class="gp">sage: </span><span class="n">X</span> <span class="o">=</span> <span class="n">BigArithGroup</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">outfile</span><span class="o">=</span><span class="s1">&#39;/tmp/darmonpoints.tmp&#39;</span><span class="p">)</span> <span class="c1">#  optional - magma</span>
+<span class="gp">sage: </span><span class="n">II</span><span class="p">,</span> <span class="n">JJ</span><span class="p">,</span> <span class="n">KK</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">local_splitting</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1">#  optional - magma</span>
+<span class="gp">sage: </span><span class="n">B</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">Gn</span><span class="o">.</span><span class="n">B</span>    <span class="c1">#  optional - magma</span>
+<span class="gp">sage: </span><span class="n">II</span><span class="o">**</span><span class="mi">2</span> <span class="o">==</span> <span class="n">QQ</span><span class="p">(</span><span class="n">B</span><span class="o">.</span><span class="n">gen</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#  optional - magma</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.prime">
+<code class="descname">prime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.prime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.reduce_in_amalgam">
+<code class="descname">reduce_in_amalgam</code><span class="sig-paren">(</span><em>x</em>, <em>return_word=False</em>, <em>check=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.reduce_in_amalgam" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<span class="go">....:     def __init__(self, x):</span>
+<span class="go">....:         self._x = x</span>
+<span class="go">....:     @cached_method</span>
+<span class="go">....:     def f(self,*args):</span>
+<span class="go">....:         return self._x^2</span>
+<span class="gp">sage: </span><span class="n">a</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{}</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+<span class="go">4</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{((), ()): 4}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.save_to_db">
+<code class="descname">save_to_db</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.save_to_db" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.set_wp">
+<code class="descname">set_wp</code><span class="sig-paren">(</span><em>wp</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.set_wp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.small_group">
+<code class="descname">small_group</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.small_group" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.smoothen">
+<code class="descname">smoothen</code><span class="sig-paren">(</span><em>gi</em>, <em>ell</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.smoothen" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.subdivide">
+<code class="descname">subdivide</code><span class="sig-paren">(</span><em>edgelist</em>, <em>parity</em>, <em>depth</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.subdivide" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.use_shapiro">
+<code class="descname">use_shapiro</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.use_shapiro" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.wp">
+<code class="descname">wp</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.wp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Arithmetic group elements</a></li>
+<li><a class="reference internal" href="#module-darmonpoints.arithgroup_nscartan">Non-split Cartan</a></li>
+<li><a class="reference internal" href="#module-darmonpoints.arithgroup">Arithmetic group</a></li>
+<li><a class="reference internal" href="#module-darmonpoints.sarithgroup">S-arithmetic group</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Darmon Points</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cohomology.html"
+                        title="next chapter">Abstract cohomology class</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/arithmeticgroups.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cohomology.html" title="Abstract cohomology class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Darmon Points"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Darmon Points 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2017, Marc Masdeu.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+    </div>
+  </body>
+</html>

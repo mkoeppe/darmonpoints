@@ -1,0 +1,968 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Mixed extensions &mdash; Darmon Points 3.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/MathJax.js?config=TeX-AMS_HTML-full,../mathjax_sage.js"></script>
+    <link rel="top" title="Darmon Points 3.0 documentation" href="index.html" />
+    <link rel="prev" title="Overconvergent module of distributions" href="distributions.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="distributions.html" title="Overconvergent module of distributions"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Darmon Points 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-darmonpoints.mixed_extension">
+<span id="mixed-extensions"></span><h1>Mixed extensions<a class="headerlink" href="#module-darmonpoints.mixed_extension" title="Permalink to this headline">¶</a></h1>
+<p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+<dl class="class">
+<dt id="darmonpoints.mixed_extension.QuadExt">
+<em class="property">class </em><code class="descclassname">darmonpoints.mixed_extension.</code><code class="descname">QuadExt</code><span class="sig-paren">(</span><em>base</em>, <em>polynomial</em>, <em>category=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.structure.unique_representation.UniqueRepresentation</span></code>, <code class="xref py py-class docutils literal"><span class="pre">sage.rings.ring.Field</span></code></p>
+<p>A quadratic extension of a p-adic field.</p>
+<p>EXAMPLES:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="kn">from</span> <span class="nn">darmonpoints.mixed_extension</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">sage: </span><span class="n">p</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="gp">sage: </span><span class="n">K0</span><span class="o">.&lt;</span><span class="n">z</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">Qq</span><span class="p">(</span><span class="n">p</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">K</span> <span class="o">=</span> <span class="n">QuadExt</span><span class="p">(</span><span class="n">K0</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="k">print</span> <span class="n">K</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">K</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">1 + 7 + O(7^20) + ( 0 )*pi</span>
+<span class="gp">sage: </span><span class="k">print</span> <span class="n">K</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">K</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">5 + 6*7 + 6*7^2 + 6*7^3 + 6*7^4 + 6*7^5 + 6*7^6 + 6*7^7 + 6*7^8 + 6*7^9 + 6*7^10 + 6*7^11 + 6*7^12 + 6*7^13 + 6*7^14 + 6*7^15 + 6*7^16 + 6*7^17 + 6*7^18 + 6*7^19 + O(7^20) + ( 0 )*pi</span>
+<span class="gp">sage: </span><span class="k">print</span> <span class="n">K</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">K</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">1 + 2*7 + O(7^20) + ( O(7^20) )*pi</span>
+<span class="gp">sage: </span><span class="k">print</span> <span class="n">K</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+<span class="go">0 + ( 1 + O(7^20) )*pi</span>
+<span class="gp">sage: </span><span class="k">print</span> <span class="n">K</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span><span class="o">**</span><span class="mi">2</span>
+<span class="go">7 + O(7^21) + ( O(7^20) )*pi</span>
+<span class="gp">sage: </span><span class="k">print</span> <span class="p">(</span><span class="n">K</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">K</span><span class="o">.</span><span class="n">gen</span><span class="p">())</span><span class="o">**</span><span class="mi">2</span>
+<span class="go">1 + 7 + O(7^20) + ( 2 + O(7^20) )*pi</span>
+<span class="gp">sage: </span><span class="k">print</span> <span class="n">K</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="n">K</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">5 + 3*7 + 3*7^2 + 3*7^3 + 3*7^4 + 3*7^5 + 3*7^6 + 3*7^7 + 3*7^8 + 3*7^9 + 3*7^10 + 3*7^11 + 3*7^12 + 3*7^13 + 3*7^14 + 3*7^15 + 3*7^16 + 3*7^17 + 3*7^18 + 3*7^19 + O(7^20) + ( 0 )*pi</span>
+<span class="gp">sage: </span><span class="k">print</span> <span class="n">K</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">K</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="go">2 + 5*7 + 4*7^2 + 2*7^4 + 3*7^5 + 4*7^6 + 3*7^7 + 5*7^8 + 7^9 + 4*7^10 + 3*7^11 + 3*7^12 + 4*7^13 + 5*7^14 + 2*7^15 + 5*7^17 + 6*7^18 + 2*7^19 + O(7^20) + ( 5 + 4*7^2 + 3*7^4 + 4*7^5 + 7^6 + 7^7 + 3*7^8 + 3*7^9 + 4*7^11 + 5*7^12 + 5*7^13 + 5*7^14 + 5*7^16 + 3*7^17 + 4*7^18 + O(7^20) )*pi</span>
+<span class="gp">sage: </span><span class="k">print</span> <span class="n">K0</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">K</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+<span class="go">0 + ( 2 + O(7^20) )*pi</span>
+<span class="gp">sage: </span><span class="k">print</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">K</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+<span class="go">0 + ( 2 + O(7^20) )*pi</span>
+
+<span class="gp">sage: </span><span class="n">x</span> <span class="o">=</span> <span class="n">QQ</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+<span class="gp">sage: </span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="gp">sage: </span><span class="k">print</span> <span class="n">f</span><span class="p">(</span><span class="n">K</span><span class="o">.</span><span class="n">gen</span><span class="p">())</span>
+<span class="go">1 + 7 + O(7^20) + ( 4 + 6*7 + 6*7^2 + 6*7^3 + 6*7^4 + 6*7^5 + 6*7^6 + 6*7^7 + 6*7^8 + 6*7^9 + 6*7^10 + 6*7^11 + 6*7^12 + 6*7^13 + 6*7^14 + 6*7^15 + 6*7^16 + 6*7^17 + 6*7^18 + 6*7^19 + O(7^20) )*pi</span>
+<span class="gp">sage: </span><span class="k">print</span> <span class="n">K</span><span class="p">(</span><span class="n">K</span><span class="o">.</span><span class="n">base_ring</span><span class="p">()(</span><span class="mi">0</span><span class="p">))</span>
+<span class="go">0 + ( 0 )*pi</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="darmonpoints.mixed_extension.QuadExt.Element">
+<code class="descname">Element</code><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExt.Element" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#darmonpoints.mixed_extension.QuadExtElement" title="darmonpoints.mixed_extension.QuadExtElement"><code class="xref py py-class docutils literal"><span class="pre">QuadExtElement</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.mixed_extension.QuadExt.absolute_degree">
+<code class="descname">absolute_degree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExt.absolute_degree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.mixed_extension.QuadExt.base_ring">
+<code class="descname">base_ring</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExt.base_ring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.mixed_extension.QuadExt.characteristic">
+<code class="descname">characteristic</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExt.characteristic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.mixed_extension.QuadExt.gen">
+<code class="descname">gen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExt.gen" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.mixed_extension.QuadExt.is_finite">
+<code class="descname">is_finite</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExt.is_finite" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.mixed_extension.QuadExt.polynomial">
+<code class="descname">polynomial</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExt.polynomial" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.mixed_extension.QuadExt.precision_cap">
+<code class="descname">precision_cap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExt.precision_cap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.mixed_extension.QuadExt.prime">
+<code class="descname">prime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExt.prime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.mixed_extension.QuadExt.ramification_index">
+<code class="descname">ramification_index</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExt.ramification_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.mixed_extension.QuadExt.random_element">
+<code class="descname">random_element</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExt.random_element" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.mixed_extension.QuadExt.relative_degree">
+<code class="descname">relative_degree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExt.relative_degree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.mixed_extension.QuadExt.residue_class_degree">
+<code class="descname">residue_class_degree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExt.residue_class_degree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.mixed_extension.QuadExt.some_elements">
+<code class="descname">some_elements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExt.some_elements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.mixed_extension.QuadExt.uniformizer">
+<code class="descname">uniformizer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExt.uniformizer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.mixed_extension.QuadExt.unramified_generator">
+<code class="descname">unramified_generator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExt.unramified_generator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="darmonpoints.mixed_extension.QuadExtElement">
+<em class="property">class </em><code class="descclassname">darmonpoints.mixed_extension.</code><code class="descname">QuadExtElement</code><span class="sig-paren">(</span><em>parent</em>, <em>x</em>, <em>y=None</em>, <em>check=True</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExtElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.structure.element.FieldElement</span></code></p>
+<dl class="method">
+<dt id="darmonpoints.mixed_extension.QuadExtElement.list">
+<code class="descname">list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExtElement.list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.mixed_extension.QuadExtElement.norm_relative">
+<code class="descname">norm_relative</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExtElement.norm_relative" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.mixed_extension.QuadExtElement.ordp">
+<code class="descname">ordp</code><span class="sig-paren">(</span><em>p=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExtElement.ordp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.mixed_extension.QuadExtElement.sqrt">
+<code class="descname">sqrt</code><span class="sig-paren">(</span><em>return_all=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExtElement.sqrt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.mixed_extension.QuadExtElement.trace_absolute">
+<code class="descname">trace_absolute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExtElement.trace_absolute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.mixed_extension.QuadExtElement.trace_relative">
+<code class="descname">trace_relative</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExtElement.trace_relative" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.mixed_extension.QuadExtElement.valuation">
+<code class="descname">valuation</code><span class="sig-paren">(</span><em>p=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.mixed_extension.QuadExtElement.valuation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-darmonpoints.util">
+<span id="utility-package"></span><h1>Utility package<a class="headerlink" href="#module-darmonpoints.util" title="Permalink to this headline">¶</a></h1>
+<p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+<dl class="class">
+<dt id="darmonpoints.util.Bunch">
+<em class="property">class </em><code class="descclassname">darmonpoints.util.</code><code class="descname">Bunch</code><span class="sig-paren">(</span><em>**kwds</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.Bunch" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="darmonpoints.util.Bunch.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>name</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.Bunch.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.util.Bunch.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>**v</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.Bunch.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.FGP_V">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">FGP_V</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.FGP_V" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.FGP_W">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">FGP_W</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.FGP_W" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.JtoP">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">JtoP</code><span class="sig-paren">(</span><em>H</em>, <em>MR</em>, <em>p=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.JtoP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.M2Z">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">M2Z</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.M2Z" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.act_H3">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">act_H3</code><span class="sig-paren">(</span><em>g</em>, <em>w</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.act_H3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.act_flt">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">act_flt</code><span class="sig-paren">(</span><em>g</em>, <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.act_flt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.act_flt_in_disc">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">act_flt_in_disc</code><span class="sig-paren">(</span><em>g</em>, <em>x</em>, <em>P</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.act_flt_in_disc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.affine_transformation">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">affine_transformation</code><span class="sig-paren">(</span><em>x1p</em>, <em>x2p</em>, <em>x3p</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.affine_transformation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.cantor_diagonal">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">cantor_diagonal</code><span class="sig-paren">(</span><em>iter1</em>, <em>iter2</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.cantor_diagonal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.config_section_map">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">config_section_map</code><span class="sig-paren">(</span><em>config</em>, <em>section</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.config_section_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.conjugate_quaternion_over_base">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">conjugate_quaternion_over_base</code><span class="sig-paren">(</span><em>q</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.conjugate_quaternion_over_base" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.covolume">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">covolume</code><span class="sig-paren">(</span><em>F</em>, <em>D</em>, <em>M=1</em>, <em>prec=None</em>, <em>zeta=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.covolume" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.direct_sum_of_maps">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">direct_sum_of_maps</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.direct_sum_of_maps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.direct_sum_of_modules">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">direct_sum_of_modules</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.direct_sum_of_modules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.discover_equation">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">discover_equation</code><span class="sig-paren">(</span><em>qE</em>, <em>emb</em>, <em>conductor</em>, <em>prec</em>, <em>field=None</em>, <em>check_conductor=True</em>, <em>height_threshold=0.85</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.discover_equation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.enumerate_words">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">enumerate_words</code><span class="sig-paren">(</span><em>v</em>, <em>n=None</em>, <em>max_length=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.enumerate_words" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.find_center">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">find_center</code><span class="sig-paren">(</span><em>p</em>, <em>level</em>, <em>t1</em>, <em>t2</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.find_center" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function computes the center between two points in Cp</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.find_containing_affinoid">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">find_containing_affinoid</code><span class="sig-paren">(</span><em>p</em>, <em>z</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.find_containing_affinoid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the vertex corresponding to the affinoid in
+the <span class="math">\(p\)</span>-adic upper half plane that a given (unramified!) point reduces to.</p>
+<p>INPUT:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">z</span></code> - an element of an unramified extension of <span class="math">\(\QQ_p\)</span> that is not contained
+in <span class="math">\(\QQ_p\)</span>.</li>
+</ul>
+</div></blockquote>
+<p>OUTPUT:</p>
+<blockquote>
+<div><p>A 2x2 integer matrix representing the affinoid.</p>
+<blockquote>
+<div>sage: K.&lt;a&gt; = Qq(5^2,20)
+sage: from darmonpoints.util import find_containing_affinoid
+sage: find_containing_affinoid(5,a)
+[1 0]
+[0 1]
+sage: z = 5*a+3
+sage: v = find_containing_affinoid(5,z).inverse(); v
+[ 1/5 -3/5]
+[   0    1]</div></blockquote>
+</div></blockquote>
+<p>Note that the translate of <code class="docutils literal"><span class="pre">z</span></code> belongs to the standard affinoid. That is,
+it is a <span class="math">\(p\)</span>-adic unit and its reduction modulo <span class="math">\(p\)</span> is not in <span class="math">\(\FF_p\)</span>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<span class="gp">sage: </span><span class="n">gz</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">z</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">c</span><span class="o">*</span><span class="n">z</span><span class="o">+</span><span class="n">d</span><span class="p">);</span> <span class="n">gz</span>
+<span class="go">a + O(5^19)</span>
+<span class="gp">sage: </span><span class="n">gz</span><span class="o">.</span><span class="n">valuation</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.find_the_unit_of">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">find_the_unit_of</code><span class="sig-paren">(</span><em>F</em>, <em>K</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.find_the_unit_of" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.fwrite">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">fwrite</code><span class="sig-paren">(</span><em>string</em>, <em>outfile</em>, <em>newline=True</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.fwrite" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.get_C_and_C2">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">get_C_and_C2</code><span class="sig-paren">(</span><em>E</em>, <em>qEpows</em>, <em>R</em>, <em>prec</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.get_C_and_C2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.get_c4_and_c6">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">get_c4_and_c6</code><span class="sig-paren">(</span><em>qE</em>, <em>prec</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.get_c4_and_c6" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.get_heegner_params">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">get_heegner_params</code><span class="sig-paren">(</span><em>p</em>, <em>E</em>, <em>beta</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.get_heegner_params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.get_j_invariant">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">get_j_invariant</code><span class="sig-paren">(</span><em>qE</em>, <em>prec</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.get_j_invariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.getcoords">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">getcoords</code><span class="sig-paren">(</span><em>E</em>, <em>u</em>, <em>prec=None</em>, <em>R=None</em>, <em>qE=None</em>, <em>qEpows=None</em>, <em>C=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.getcoords" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.height_polynomial">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">height_polynomial</code><span class="sig-paren">(</span><em>x</em>, <em>base=10</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.height_polynomial" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.hensel_lift">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">hensel_lift</code><span class="sig-paren">(</span><em>f</em>, <em>x0</em>, <em>max_iters=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.hensel_lift" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.is_in_Gamma0loc">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">is_in_Gamma0loc</code><span class="sig-paren">(</span><em>A</em>, <em>det_condition=True</em>, <em>p=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.is_in_Gamma0loc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether the matrix A has all entries Zp-integral, and is upper-triangular mod p.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.is_in_Gamma_1">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">is_in_Gamma_1</code><span class="sig-paren">(</span><em>mat</em>, <em>N</em>, <em>p=None</em>, <em>determinant_condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.is_in_Gamma_1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.is_in_Sigma0">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">is_in_Sigma0</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.is_in_Sigma0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.is_in_principal_affinoid">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">is_in_principal_affinoid</code><span class="sig-paren">(</span><em>p</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.is_in_principal_affinoid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.lift_padic_splitting">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">lift_padic_splitting</code><span class="sig-paren">(</span><em>a</em>, <em>b</em>, <em>II0</em>, <em>JJ0</em>, <em>p</em>, <em>prec</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.lift_padic_splitting" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.magma_F_elt_to_sage">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">magma_F_elt_to_sage</code><span class="sig-paren">(</span><em>F_sage</em>, <em>x</em>, <em>magma</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.magma_F_elt_to_sage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.magma_F_ideal_to_sage">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">magma_F_ideal_to_sage</code><span class="sig-paren">(</span><em>F_sage</em>, <em>x</em>, <em>magma</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.magma_F_ideal_to_sage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.magma_integral_quaternion_to_sage">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">magma_integral_quaternion_to_sage</code><span class="sig-paren">(</span><em>B_sage</em>, <em>O_magma</em>, <em>F_magma</em>, <em>x</em>, <em>magma</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.magma_integral_quaternion_to_sage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.magma_quaternion_to_sage">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">magma_quaternion_to_sage</code><span class="sig-paren">(</span><em>B_sage</em>, <em>x</em>, <em>magma</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.magma_quaternion_to_sage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.module_generators">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">module_generators</code><span class="sig-paren">(</span><em>K</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.module_generators" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a cached version of a function, which only recomputes
+values it hasn&#8217;t already computed. A custom name can be
+provided by an optional argument &#8220;name&#8221;.</p>
+<p>If <code class="docutils literal"><span class="pre">f</span></code> is a function, do either <code class="docutils literal"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">CachedFunction(f)</span></code>
+to make a cached version of <code class="docutils literal"><span class="pre">f</span></code>, or put <code class="docutils literal"><span class="pre">&#64;CachedFunction</span></code>
+right before the definition of <code class="docutils literal"><span class="pre">f</span></code> (i.e., use Python decorators):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nd">@CachedFunction</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="o">....</span>
+</pre></div>
+</div>
+<p>The inputs to the function must be hashable or they must define
+<code class="xref py py-meth docutils literal"><span class="pre">sage.structure.sage_object.SageObject._cache_key()</span></code>.</p>
+<p>TESTS:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="n">g</span> <span class="o">=</span> <span class="n">CachedFunction</span><span class="p">(</span><span class="n">number_of_partitions</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">g</span><span class="o">.</span><span class="n">__name__</span>
+<span class="go">&#39;number_of_partitions&#39;</span>
+<span class="gp">sage: </span><span class="s1">&#39;partitions&#39;</span> <span class="ow">in</span> <span class="n">sage</span><span class="o">.</span><span class="n">misc</span><span class="o">.</span><span class="n">sageinspect</span><span class="o">.</span><span class="n">sage_getdoc</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">sage: </span><span class="n">g</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">7</span>
+<span class="gp">sage: </span><span class="n">g</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{((5, &#39;default&#39;), ()): 7}</span>
+<span class="gp">sage: </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span> <span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">h</span> <span class="o">=</span> <span class="n">CachedFunction</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">w</span> <span class="o">=</span> <span class="n">walltime</span><span class="p">()</span>
+<span class="gp">sage: </span><span class="n">h</span><span class="p">();</span> <span class="n">h</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="n">h</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">sage: </span><span class="n">walltime</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>By default, the contents of the cache are not pickled:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="nd">@cached_function</span>
+<span class="go">....: def f(n): return None</span>
+<span class="gp">sage: </span><span class="kn">import</span> <span class="nn">__main__</span>
+<span class="gp">sage: </span><span class="n">__main__</span><span class="o">.</span><span class="n">f</span> <span class="o">=</span> <span class="n">f</span>
+<span class="gp">sage: </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span> <span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span>
+<span class="go">100</span>
+
+<span class="gp">sage: </span><span class="n">s</span> <span class="o">=</span> <span class="n">dumps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">f</span><span class="o">.</span><span class="n">clear_cache</span><span class="p">()</span>
+<span class="gp">sage: </span><span class="n">f</span> <span class="o">=</span> <span class="n">loads</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+<p>If <code class="docutils literal"><span class="pre">do_pickle</span></code> is set, then the cache is pickled:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="nd">@cached_function</span><span class="p">(</span><span class="n">do_pickle</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="go">....: def f(n): return None</span>
+<span class="gp">sage: </span><span class="n">__main__</span><span class="o">.</span><span class="n">f</span> <span class="o">=</span> <span class="n">f</span>
+<span class="gp">sage: </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span> <span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span>
+<span class="go">100</span>
+
+<span class="gp">sage: </span><span class="n">s</span> <span class="o">=</span> <span class="n">dumps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">f</span><span class="o">.</span><span class="n">clear_cache</span><span class="p">()</span>
+<span class="gp">sage: </span><span class="n">f</span> <span class="o">=</span> <span class="n">loads</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span>
+<span class="go">100</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.module_generators_new">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">module_generators_new</code><span class="sig-paren">(</span><em>K</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.module_generators_new" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a cached version of a function, which only recomputes
+values it hasn&#8217;t already computed. A custom name can be
+provided by an optional argument &#8220;name&#8221;.</p>
+<p>If <code class="docutils literal"><span class="pre">f</span></code> is a function, do either <code class="docutils literal"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">CachedFunction(f)</span></code>
+to make a cached version of <code class="docutils literal"><span class="pre">f</span></code>, or put <code class="docutils literal"><span class="pre">&#64;CachedFunction</span></code>
+right before the definition of <code class="docutils literal"><span class="pre">f</span></code> (i.e., use Python decorators):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nd">@CachedFunction</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="o">....</span>
+</pre></div>
+</div>
+<p>The inputs to the function must be hashable or they must define
+<code class="xref py py-meth docutils literal"><span class="pre">sage.structure.sage_object.SageObject._cache_key()</span></code>.</p>
+<p>TESTS:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="n">g</span> <span class="o">=</span> <span class="n">CachedFunction</span><span class="p">(</span><span class="n">number_of_partitions</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">g</span><span class="o">.</span><span class="n">__name__</span>
+<span class="go">&#39;number_of_partitions&#39;</span>
+<span class="gp">sage: </span><span class="s1">&#39;partitions&#39;</span> <span class="ow">in</span> <span class="n">sage</span><span class="o">.</span><span class="n">misc</span><span class="o">.</span><span class="n">sageinspect</span><span class="o">.</span><span class="n">sage_getdoc</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">sage: </span><span class="n">g</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">7</span>
+<span class="gp">sage: </span><span class="n">g</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{((5, &#39;default&#39;), ()): 7}</span>
+<span class="gp">sage: </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span> <span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">h</span> <span class="o">=</span> <span class="n">CachedFunction</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">w</span> <span class="o">=</span> <span class="n">walltime</span><span class="p">()</span>
+<span class="gp">sage: </span><span class="n">h</span><span class="p">();</span> <span class="n">h</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="n">h</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">sage: </span><span class="n">walltime</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>By default, the contents of the cache are not pickled:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="nd">@cached_function</span>
+<span class="go">....: def f(n): return None</span>
+<span class="gp">sage: </span><span class="kn">import</span> <span class="nn">__main__</span>
+<span class="gp">sage: </span><span class="n">__main__</span><span class="o">.</span><span class="n">f</span> <span class="o">=</span> <span class="n">f</span>
+<span class="gp">sage: </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span> <span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span>
+<span class="go">100</span>
+
+<span class="gp">sage: </span><span class="n">s</span> <span class="o">=</span> <span class="n">dumps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">f</span><span class="o">.</span><span class="n">clear_cache</span><span class="p">()</span>
+<span class="gp">sage: </span><span class="n">f</span> <span class="o">=</span> <span class="n">loads</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+<p>If <code class="docutils literal"><span class="pre">do_pickle</span></code> is set, then the cache is pickled:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="nd">@cached_function</span><span class="p">(</span><span class="n">do_pickle</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="go">....: def f(n): return None</span>
+<span class="gp">sage: </span><span class="n">__main__</span><span class="o">.</span><span class="n">f</span> <span class="o">=</span> <span class="n">f</span>
+<span class="gp">sage: </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span> <span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span>
+<span class="go">100</span>
+
+<span class="gp">sage: </span><span class="n">s</span> <span class="o">=</span> <span class="n">dumps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">f</span><span class="o">.</span><span class="n">clear_cache</span><span class="p">()</span>
+<span class="gp">sage: </span><span class="n">f</span> <span class="o">=</span> <span class="n">loads</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span>
+<span class="go">100</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.multiply_out">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">multiply_out</code><span class="sig-paren">(</span><em>word</em>, <em>genlist</em>, <em>z=1</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.multiply_out" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.our_algdep">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">our_algdep</code><span class="sig-paren">(</span><em>z</em>, <em>degree</em>, <em>prec=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.our_algdep" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.our_cuberoot">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">our_cuberoot</code><span class="sig-paren">(</span><em>xx</em>, <em>K=None</em>, <em>return_all=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.our_cuberoot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.our_nroot">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">our_nroot</code><span class="sig-paren">(</span><em>xx</em>, <em>n</em>, <em>K=None</em>, <em>return_all=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.our_nroot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.our_sqrt">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">our_sqrt</code><span class="sig-paren">(</span><em>xx</em>, <em>K=None</em>, <em>return_all=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.our_sqrt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.period_from_coords">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">period_from_coords</code><span class="sig-paren">(</span><em>R</em>, <em>E</em>, <em>P</em>, <em>prec=20</em>, <em>K_to_Cp=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.period_from_coords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a point <span class="math">\(P\)</span> in the formal group of the elliptic curve <span class="math">\(E\)</span> with split multiplicative reduction,
+this produces an element <span class="math">\(u\)</span> in <span class="math">\(\QQ_p^{\times}\)</span> mapped to the point <span class="math">\(P\)</span> by the Tate parametrisation.
+The algorithm return the unique such element in <span class="math">\(1+p\ZZ_p\)</span>.</p>
+<p>INPUT:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">P</span></code> - a point on the elliptic curve.</li>
+<li><code class="docutils literal"><span class="pre">prec</span></code> - the <span class="math">\(p\)</span>-adic precision, default is 20.</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.point_radius">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">point_radius</code><span class="sig-paren">(</span><em>z</em>, <em>level=1</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.point_radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the vertex corresponding to the affinoid in
+the <span class="math">\(p\)</span>-adic upper half plane that a given (unramified!) point reduces to.</p>
+<p>INPUT:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">z</span></code> - an element of an unramified extension of <span class="math">\(\QQ_p\)</span> that is not contained
+in <span class="math">\(\QQ_p\)</span>.</li>
+</ul>
+</div></blockquote>
+<p>OUTPUT:</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.print_padic">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">print_padic</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.print_padic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.print_table_latex">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">print_table_latex</code><span class="sig-paren">(</span><em>self</em>, <em>header_string=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.print_table_latex" title="Permalink to this definition">¶</a></dt>
+<dd><p>LaTeX representation of a table.</p>
+<p>If an entry is a Sage object, it is replaced by its LaTeX
+representation, delimited by dollar signs (i.e., <code class="docutils literal"><span class="pre">x</span></code> is
+replaced by <code class="docutils literal"><span class="pre">$latex(x)$</span></code>). If an entry is a string, the
+dollar signs are not automatically added, so tables can
+include both plain text and mathematics.</p>
+<p>EXAMPLES:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="kn">from</span> <span class="nn">sage.misc.table</span> <span class="kn">import</span> <span class="n">table</span>
+<span class="gp">sage: </span><span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">r&#39;$\sin(x)$&#39;</span><span class="p">,</span> <span class="s1">&#39;$x$&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">34342</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="n">identity_matrix</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]]</span>
+<span class="gp">sage: </span><span class="n">latex</span><span class="p">(</span><span class="n">table</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="c1"># indirect doctest</span>
+<span class="go">\begin{tabular}{lll}</span>
+<span class="go">$\sin(x)$ &amp; $x$ &amp; text \\</span>
+<span class="go">$1$ &amp; $34342$ &amp; $3$ \\</span>
+<span class="go">$\left(\begin{array}{rr}</span>
+<span class="go">1 &amp; 0 \\</span>
+<span class="go">0 &amp; 1</span>
+<span class="go">\end{array}\right)$ &amp; $5$ &amp; $6$ \\</span>
+<span class="go">\end{tabular}</span>
+<span class="gp">sage: </span><span class="n">latex</span><span class="p">(</span><span class="n">table</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">))</span>
+<span class="go">\begin{tabular}{|c|c|c|} \hline</span>
+<span class="go">$\sin(x)$ &amp; $x$ &amp; text \\ \hline</span>
+<span class="go">$1$ &amp; $34342$ &amp; $3$ \\ \hline</span>
+<span class="go">$\left(\begin{array}{rr}</span>
+<span class="go">1 &amp; 0 \\</span>
+<span class="go">0 &amp; 1</span>
+<span class="go">\end{array}\right)$ &amp; $5$ &amp; $6$ \\ \hline</span>
+<span class="go">\end{tabular}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.quaternion_algebra_invariants_from_ramification">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">quaternion_algebra_invariants_from_ramification</code><span class="sig-paren">(</span><em>F</em>, <em>I</em>, <em>S=None</em>, <em>optimize_through_magma=True</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.quaternion_algebra_invariants_from_ramification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a quaternion algebra over a number field which ramifies exactly at
+the specified places. The algorithm is inspired by the current MAGMA implementation
+by John Voight.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">At the moment the algorithm requires F to be of narrow class number one. This
+is only needed when calling the routine weak_approximation, whose current
+implementation is done under this assumption.</p>
+</div>
+<p>INPUT:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">F</span></code> - a number field</li>
+<li><code class="docutils literal"><span class="pre">I</span></code> - an ideal in F</li>
+<li><code class="docutils literal"><span class="pre">S</span></code> - (default: None) a list of real embeddings or real places of F</li>
+</ul>
+<p>OUTPUT:</p>
+<ul class="simple">
+<li>a quaternion algebra of discriminant I and whose set of infinite
+ramified places is S</li>
+</ul>
+<p>EXAMPLES:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="n">F</span><span class="o">.&lt;</span><span class="n">r</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">QuadraticField</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="kn">from</span> <span class="nn">darmonpoints.util</span> <span class="kn">import</span> <span class="n">quaternion_algebra_invariants_from_ramification</span>
+<span class="gp">sage: </span><span class="n">quaternion_algebra_invariants_from_ramification</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">F</span><span class="o">.</span><span class="n">ideal</span><span class="p">(</span><span class="mi">11</span><span class="p">),[]);</span> <span class="c1"># random #  optional - magma</span>
+<span class="go">(22, -22*r - 31)</span>
+<span class="gp">sage: </span><span class="n">F</span><span class="o">.&lt;</span><span class="n">r</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">NumberField</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">24</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">D</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">ideal</span><span class="p">(</span><span class="mi">106</span><span class="o">*</span><span class="n">r</span> <span class="o">+</span> <span class="mi">469</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">S</span> <span class="o">=</span> <span class="p">[</span><span class="n">F</span><span class="o">.</span><span class="n">real_places</span><span class="p">()[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">quaternion_algebra_invariants_from_ramification</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">S</span><span class="p">)</span> <span class="c1">#  optional - magma</span>
+<span class="gp">sage: </span><span class="n">B</span> <span class="o">=</span> <span class="n">QuaternionAlgebra</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="c1">#  optional - magma</span>
+<span class="gp">sage: </span><span class="n">B</span><span class="o">.</span><span class="n">discriminant</span><span class="p">()</span> <span class="o">==</span> <span class="n">D</span> <span class="c1">#  optional - magma</span>
+<span class="go">True</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">quaternion_algebra_invariants_from_ramification</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">r</span><span class="o">+</span><span class="mi">1</span><span class="p">,[])</span> <span class="c1">#  optional - magma</span>
+<span class="gp">sage: </span><span class="n">B</span> <span class="o">=</span> <span class="n">QuaternionAlgebra</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="c1">#  optional - magma</span>
+<span class="gp">sage: </span><span class="n">B</span><span class="o">.</span><span class="n">discriminant</span><span class="p">()</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">ideal</span><span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">#  optional - magma</span>
+<span class="go">True</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">invariants</span><span class="p">()</span> <span class="c1">#  optional - magma</span>
+<span class="gp">sage: </span><span class="nb">all</span><span class="p">([</span><span class="n">v</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">v</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">F</span><span class="o">.</span><span class="n">real_places</span><span class="p">()])</span> <span class="c1">#  optional - magma</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>The number of ramified places must be even:</p>
+<blockquote>
+<div>sage: F.&lt;r&gt; = NumberField(x^2 - x - 24)
+sage: a, b = quaternion_algebra_invariants_from_ramification(F,r+4,[]) #  optional - magma
+Traceback (most recent call last):
+...
+ValueError: Number of ramified places must be even</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.quaternion_to_magma_quaternion">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">quaternion_to_magma_quaternion</code><span class="sig-paren">(</span><em>Bmagma</em>, <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.quaternion_to_magma_quaternion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.recognize_J">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">recognize_J</code><span class="sig-paren">(</span><em>E</em>, <em>J</em>, <em>K</em>, <em>local_embedding=None</em>, <em>known_multiple=1</em>, <em>twopowlist=None</em>, <em>prec=None</em>, <em>outfile=None</em>, <em>qEpows=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.recognize_J" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.recognize_point">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">recognize_point</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>E</em>, <em>F</em>, <em>prec=None</em>, <em>HCF=None</em>, <em>E_over_HCF=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.recognize_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.reduce_word">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">reduce_word</code><span class="sig-paren">(</span><em>word</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.reduce_word" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simplifies the given word by cancelling out [g^a, g^b] -&gt; [g^(a+b)],
+and [g^0] -&gt; []</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.reduce_word_tietze">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">reduce_word_tietze</code><span class="sig-paren">(</span><em>word</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.reduce_word_tietze" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simplifies the given word by cancelling out [g, -g] -&gt; []</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.sage_F_elt_to_magma">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">sage_F_elt_to_magma</code><span class="sig-paren">(</span><em>F_magma</em>, <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.sage_F_elt_to_magma" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.sage_F_ideal_to_magma">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">sage_F_ideal_to_magma</code><span class="sig-paren">(</span><em>F_magma</em>, <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.sage_F_ideal_to_magma" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.sage_quaternion_to_magma">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">sage_quaternion_to_magma</code><span class="sig-paren">(</span><em>B_magma</em>, <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.sage_quaternion_to_magma" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.selmer_group_iterator">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">selmer_group_iterator</code><span class="sig-paren">(</span><em>self</em>, <em>S</em>, <em>m</em>, <em>proof=True</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.selmer_group_iterator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an iterator through elements of the finite group <span class="math">\(K(S,m)\)</span>.
+[1, -1, 13, -13, 11, -11, 143, -143]</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.set_immutable">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">set_immutable</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.set_immutable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.simplification_isomorphism">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">simplification_isomorphism</code><span class="sig-paren">(</span><em>G</em>, <em>return_inverse=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.simplification_isomorphism" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an isomorphism from <code class="docutils literal"><span class="pre">self</span></code> to a finitely presented group with
+a (hopefully) simpler presentation.</p>
+<p>EXAMPLES:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="kn">from</span> <span class="nn">sage.groups.free_group</span> <span class="kn">import</span> <span class="n">FreeGroup</span>
+<span class="gp">sage: </span><span class="n">G</span><span class="o">.&lt;</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">FreeGroup</span><span class="p">()</span>
+<span class="gp">sage: </span><span class="n">H</span> <span class="o">=</span> <span class="n">G</span> <span class="o">/</span> <span class="p">[</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">c</span><span class="p">,</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">*</span><span class="n">b</span><span class="o">/</span><span class="n">c</span><span class="o">^</span><span class="mi">2</span><span class="p">]</span>
+<span class="gp">sage: </span><span class="n">I</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">simplification_isomorphism</span><span class="p">()</span>
+<span class="gp">sage: </span><span class="n">I</span> <span class="c1"># random</span>
+<span class="go">Generic morphism:</span>
+<span class="go">  From: Finitely presented group &lt; a, b, c | a*b*c, a*b^2, c*b*c^-2 &gt;</span>
+<span class="go">  To:   Finitely presented group &lt; b |  &gt;</span>
+<span class="gp">sage: </span><span class="n">I</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">I</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="n">I</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="c1"># random</span>
+<span class="go">b^-2, b, b</span>
+</pre></div>
+</div>
+<p>TESTS:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="kn">from</span> <span class="nn">sage.groups.free_group</span> <span class="kn">import</span> <span class="n">FreeGroup</span>
+<span class="gp">sage: </span><span class="n">F</span> <span class="o">=</span> <span class="n">FreeGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">G</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">quotient</span><span class="p">([</span><span class="n">F</span><span class="o">.</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">sage: </span><span class="n">G</span><span class="o">.</span><span class="n">simplification_isomorphism</span><span class="p">()</span>
+<span class="go">Generic morphism:</span>
+<span class="go">  From: Finitely presented group &lt; x | x &gt;</span>
+<span class="go">  To:   Finitely presented group &lt;  |  &gt;</span>
+<span class="go">  Defn: x |--&gt; 1</span>
+</pre></div>
+</div>
+<p>ALGORITM:</p>
+<p>Uses GAP.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.solve_quadratic">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">solve_quadratic</code><span class="sig-paren">(</span><em>f</em>, <em>K=None</em>, <em>return_all=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.solve_quadratic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.syllables_to_tietze">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">syllables_to_tietze</code><span class="sig-paren">(</span><em>wd</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.syllables_to_tietze" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.tate_parameter">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">tate_parameter</code><span class="sig-paren">(</span><em>E</em>, <em>R</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.tate_parameter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.tietze_to_syllables">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">tietze_to_syllables</code><span class="sig-paren">(</span><em>wd</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.tietze_to_syllables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a word in Magma format into our own format.</p>
+<p>TESTS:</p>
+<blockquote>
+<div>sage: from darmonpoints.util import tietze_to_syllables
+sage: short = tietze_to_syllables([1,1,-3,-3,-3,2,2,2,2,2,-1,-1,-1]); short
+[(0, 2), (2, -3), (1, 5), (0, -3)]</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.translate_into_twosided_list">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">translate_into_twosided_list</code><span class="sig-paren">(</span><em>V</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.translate_into_twosided_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.update_progress">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">update_progress</code><span class="sig-paren">(</span><em>progress</em>, <em>msg=''</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.update_progress" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.util.weak_approximation">
+<code class="descclassname">darmonpoints.util.</code><code class="descname">weak_approximation</code><span class="sig-paren">(</span><em>self</em>, <em>I=None</em>, <em>S=None</em>, <em>J=None</em>, <em>T=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.util.weak_approximation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Weak approximation at finite places if a number field</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">When S or T are non-empty, it is only implemented for number fields of
+narrow class number 1.</p>
+</div>
+<p>INPUT:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">I</span></code> - a fractional ideal (trivial by default) of <code class="docutils literal"><span class="pre">self</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">S</span></code> - a list (empty by default) of real places of <code class="docutils literal"><span class="pre">self</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">J</span></code> - a fractional ideal (trivial by default) of <code class="docutils literal"><span class="pre">self</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">T</span></code> - a list (empty by default) of real places of <code class="docutils literal"><span class="pre">self</span></code>.</li>
+</ul>
+<p>OUTPUT:</p>
+<dl class="docutils">
+<dt>An element x in <code class="docutils literal"><span class="pre">self</span></code> satisfying:</dt>
+<dd><ol class="first last arabic simple">
+<li><span class="math">\(v_p(x) = v_p(I)\)</span> for all prime ideals <span class="math">\(p\)</span> dividing <code class="docutils literal"><span class="pre">I</span></code>.</li>
+<li><span class="math">\(v_p(x) = 0\)</span> for all prime ideals <span class="math">\(p\)</span> dividing <code class="docutils literal"><span class="pre">J</span></code>.</li>
+<li><span class="math">\(v_p(x) \geq 0\)</span> for all prime ideals coprime to <code class="docutils literal"><span class="pre">I``+``J</span></code>.</li>
+<li><span class="math">\(v(x) &lt; 0\)</span> for all places <span class="math">\(v\)</span> in <code class="docutils literal"><span class="pre">S</span></code>.</li>
+<li><span class="math">\(v(x) &gt; 0\)</span> for all places <span class="math">\(v\)</span> in <code class="docutils literal"><span class="pre">T</span></code>.</li>
+</ol>
+</dd>
+</dl>
+<p>EXAMPLES:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="kn">from</span> <span class="nn">darmonpoints.util</span> <span class="kn">import</span> <span class="n">weak_approximation</span>
+<span class="gp">sage: </span><span class="n">F</span><span class="o">.&lt;</span><span class="n">r</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">NumberField</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">24</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">P3</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">prime_above</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">P11</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">prime_above</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">a</span> <span class="o">=</span> <span class="n">weak_approximation</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">P3</span><span class="o">^</span><span class="mi">2</span> <span class="o">*</span> <span class="n">P11</span><span class="o">^</span><span class="mi">3</span><span class="p">);</span> <span class="n">a</span>
+<span class="go">196*r + 141</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">valuation</span><span class="p">(</span><span class="n">P3</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">valuation</span><span class="p">(</span><span class="n">P11</span><span class="p">)</span>
+<span class="go">3</span>
+<span class="gp">sage: </span><span class="n">F</span><span class="o">.&lt;</span><span class="n">r</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">NumberField</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">4</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">P</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">prime_above</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">Q</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">prime_above</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">R</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">prime_above</span><span class="p">(</span><span class="mi">23</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">b</span> <span class="o">=</span> <span class="n">weak_approximation</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">P</span> <span class="o">*</span> <span class="n">Q</span> <span class="o">*</span> <span class="n">R</span><span class="p">);</span> <span class="n">b</span>
+<span class="go">-r^3 + 9*r^2 + 28*r - 19</span>
+<span class="gp">sage: </span><span class="n">b</span><span class="o">.</span><span class="n">valuation</span><span class="p">(</span><span class="n">P</span><span class="p">),</span> <span class="n">b</span><span class="o">.</span><span class="n">valuation</span><span class="p">(</span><span class="n">Q</span><span class="p">),</span> <span class="n">b</span><span class="o">.</span><span class="n">valuation</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+<span class="go">(1, 1, 1)</span>
+<span class="gp">sage: </span><span class="n">F</span><span class="o">.&lt;</span><span class="n">r</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">NumberField</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">4</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">12</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">weak_approximation</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">S</span> <span class="o">=</span> <span class="p">[</span><span class="n">F</span><span class="o">.</span><span class="n">real_places</span><span class="p">()[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">T</span> <span class="o">=</span><span class="p">[</span><span class="n">F</span><span class="o">.</span><span class="n">real_places</span><span class="p">()[</span><span class="mi">1</span><span class="p">]])</span>
+<span class="go">11*r^3 - 43*r^2 - 32*r + 143</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Mixed extensions</a></li>
+<li><a class="reference internal" href="#module-darmonpoints.util">Utility package</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="distributions.html"
+                        title="previous chapter">Overconvergent module of distributions</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/internals.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="distributions.html" title="Overconvergent module of distributions"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Darmon Points 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2017, Marc Masdeu.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+    </div>
+  </body>
+</html>

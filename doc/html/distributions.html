@@ -1,0 +1,538 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Overconvergent module of distributions &mdash; Darmon Points 3.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/MathJax.js?config=TeX-AMS_HTML-full,../mathjax_sage.js"></script>
+    <link rel="top" title="Darmon Points 3.0 documentation" href="index.html" />
+    <link rel="next" title="Mixed extensions" href="internals.html" />
+    <link rel="prev" title="Integrals" href="integration.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="internals.html" title="Mixed extensions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="integration.html" title="Integrals"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Darmon Points 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-darmonpoints.ocmodule">
+<span id="overconvergent-module-of-distributions"></span><h1>Overconvergent module of distributions<a class="headerlink" href="#module-darmonpoints.ocmodule" title="Permalink to this headline">¶</a></h1>
+<p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+<dl class="class">
+<dt id="darmonpoints.ocmodule.OCVn">
+<em class="property">class </em><code class="descclassname">darmonpoints.ocmodule.</code><code class="descname">OCVn</code><span class="sig-paren">(</span><em>p</em>, <em>depth</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.modules.module.Module</span></code>, <code class="xref py py-class docutils literal"><span class="pre">sage.structure.unique_representation.UniqueRepresentation</span></code></p>
+<dl class="attribute">
+<dt id="darmonpoints.ocmodule.OCVn.Element">
+<code class="descname">Element</code><a class="headerlink" href="#darmonpoints.ocmodule.OCVn.Element" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class represents objects in the overconvergent approximation modules used to
+describe overconvergent p-adic automorphic forms.</p>
+<p>INPUT:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">n</span></code> - integer</li>
+<li><code class="docutils literal"><span class="pre">R</span></code> - ring</li>
+<li><code class="docutils literal"><span class="pre">depth</span></code> - integer (Default: None)</li>
+<li><code class="docutils literal"><span class="pre">basis</span></code> - (Default: None)</li>
+</ul>
+</div></blockquote>
+<p>AUTHORS:</p>
+<ul class="simple">
+<li>Cameron Franc (2012-02-20)</li>
+<li>Marc Masdeu (2012-02-20)</li>
+</ul>
+<p>alias of <a class="reference internal" href="#darmonpoints.ocmodule.OCVnElement" title="darmonpoints.ocmodule.OCVnElement"><code class="xref py py-class docutils literal"><span class="pre">OCVnElement</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.ocmodule.OCVn.Sigma0">
+<code class="descname">Sigma0</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVn.Sigma0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.ocmodule.OCVn.acting_matrix">
+<code class="descname">acting_matrix</code><span class="sig-paren">(</span><em>g</em>, <em>M</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVn.acting_matrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.ocmodule.OCVn.approx_module">
+<code class="descname">approx_module</code><span class="sig-paren">(</span><em>M=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVn.approx_module" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.ocmodule.OCVn.base_ring">
+<code class="descname">base_ring</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVn.base_ring" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the base ring of the overconvergent element.</p>
+<p>EXAMPLES:</p>
+<p>This example illustrates ...</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.ocmodule.OCVn.basis">
+<code class="descname">basis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVn.basis" title="Permalink to this definition">¶</a></dt>
+<dd><p>A basis of the module.</p>
+<p>INPUT:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">x</span></code> - integer (default: 1) the description of the
+argument x goes here.  If it contains multiple lines, all
+the lines after the first need to be indented.</li>
+<li><code class="docutils literal"><span class="pre">y</span></code> - integer (default: 2) the ...</li>
+</ul>
+</div></blockquote>
+<p>OUTPUT:</p>
+<p>integer &#8211; the ...</p>
+<p>EXAMPLES:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.ocmodule.OCVn.clear_cache">
+<code class="descname">clear_cache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVn.clear_cache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.ocmodule.OCVn.depth">
+<code class="descname">depth</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVn.depth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the depth of the module.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.ocmodule.OCVn.dimension">
+<code class="descname">dimension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVn.dimension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the dimension (rank) of the module.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.ocmodule.OCVn.is_exact">
+<code class="descname">is_exact</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVn.is_exact" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.ocmodule.OCVn.is_overconvergent">
+<code class="descname">is_overconvergent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVn.is_overconvergent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.ocmodule.OCVn.precision_cap">
+<code class="descname">precision_cap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVn.precision_cap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the dimension (rank) of the module.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.ocmodule.OCVn.prime">
+<code class="descname">prime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVn.prime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="darmonpoints.ocmodule.OCVnElement">
+<em class="property">class </em><code class="descclassname">darmonpoints.ocmodule.</code><code class="descname">OCVnElement</code><span class="sig-paren">(</span><em>parent</em>, <em>val=0</em>, <em>check=True</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVnElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.structure.element.ModuleElement</span></code></p>
+<p>This class represents elements in an overconvergent coefficient module.</p>
+<p>INPUT:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">parent</span></code> - An overconvergent coefficient module.</li>
+<li><code class="docutils literal"><span class="pre">val</span></code> - The value that it needs to store (default: 0). It can be another OCVnElement,
+in which case the values are copied. It can also be a column vector (or something
+coercible to a column vector) which represents the values of the element applied to
+the polynomials <span class="math">\(1\)</span>, <span class="math">\(x\)</span>, <span class="math">\(x^2\)</span>, ... ,`x^n`.</li>
+<li><code class="docutils literal"><span class="pre">check</span></code> - boolean (default: True). If set to False, no checks are done and <code class="docutils literal"><span class="pre">val</span></code> is
+assumed to be the a column vector.</li>
+</ul>
+</div></blockquote>
+<p>AUTHORS:</p>
+<ul class="simple">
+<li>Cameron Franc (2012-02-20)</li>
+<li>Marc Masdeu (2012-02-20)</li>
+</ul>
+<dl class="method">
+<dt id="darmonpoints.ocmodule.OCVnElement.element">
+<code class="descname">element</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVnElement.element" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<p>This example illustrates ...</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.ocmodule.OCVnElement.evaluate_at_poly">
+<code class="descname">evaluate_at_poly</code><span class="sig-paren">(</span><em>P</em>, <em>R=None</em>, <em>depth=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVnElement.evaluate_at_poly" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<p>This example illustrates ...</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.ocmodule.OCVnElement.list">
+<code class="descname">list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVnElement.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<p>This example illustrates ...</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.ocmodule.OCVnElement.matrix_rep">
+<code class="descname">matrix_rep</code><span class="sig-paren">(</span><em>B=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVnElement.matrix_rep" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<p>This example illustrates ...</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.ocmodule.OCVnElement.moment">
+<code class="descname">moment</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVnElement.moment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.ocmodule.OCVnElement.r_act_by">
+<code class="descname">r_act_by</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVnElement.r_act_by" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<p>This example illustrates ...</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.ocmodule.OCVnElement.reduce_mod">
+<code class="descname">reduce_mod</code><span class="sig-paren">(</span><em>N=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVnElement.reduce_mod" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.ocmodule.OCVnElement.valuation">
+<code class="descname">valuation</code><span class="sig-paren">(</span><em>l=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVnElement.valuation" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<p>This example illustrates ...</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="darmonpoints.ocmodule.Sigma0Action">
+<em class="property">class </em><code class="descclassname">darmonpoints.ocmodule.</code><code class="descname">Sigma0Action</code><span class="sig-paren">(</span><em>G</em>, <em>M</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.Sigma0Action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.categories.action.Action</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="darmonpoints.ocmodule.our_adjuster">
+<em class="property">class </em><code class="descclassname">darmonpoints.ocmodule.</code><code class="descname">our_adjuster</code><a class="headerlink" href="#darmonpoints.ocmodule.our_adjuster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.modular.pollack_stevens.sigma0.Sigma0ActionAdjuster</span></code></p>
+<p>Callable object that turns matrices into 4-tuples.</p>
+<p>EXAMPLES:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="kn">from</span> <span class="nn">sage.modular.btquotients.pautomorphicform</span> <span class="kn">import</span> <span class="n">_btquot_adjuster</span>
+<span class="gp">sage: </span><span class="n">adj</span> <span class="o">=</span> <span class="n">_btquot_adjuster</span><span class="p">()</span>
+<span class="gp">sage: </span><span class="n">adj</span><span class="p">(</span><span class="n">matrix</span><span class="p">(</span><span class="n">ZZ</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,[</span><span class="mf">1.</span><span class="o">.</span><span class="mi">4</span><span class="p">]))</span>
+<span class="go">(4, 2, 3, 1)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-darmonpoints.representations">
+<span id="representations"></span><h1>Representations<a class="headerlink" href="#module-darmonpoints.representations" title="Permalink to this headline">¶</a></h1>
+<p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+<dl class="class">
+<dt id="darmonpoints.representations.CoIndAction">
+<em class="property">class </em><code class="descclassname">darmonpoints.representations.</code><code class="descname">CoIndAction</code><span class="sig-paren">(</span><em>algebra</em>, <em>V</em>, <em>G</em>, <em>trivial_action=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.CoIndAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.categories.action.Action</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="darmonpoints.representations.CoIndElement">
+<em class="property">class </em><code class="descclassname">darmonpoints.representations.</code><code class="descname">CoIndElement</code><span class="sig-paren">(</span><em>parent</em>, <em>data</em>, <em>check=True</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.CoIndElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.structure.element.ModuleElement</span></code></p>
+<p>Elements in a co-induced module are represented by lists [v_1,ldots v_r]
+indexed by the cosets of G(p) G(1).</p>
+<dl class="method">
+<dt id="darmonpoints.representations.CoIndElement.act_and_evaluate_at_identity">
+<code class="descname">act_and_evaluate_at_identity</code><span class="sig-paren">(</span><em>g</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.CoIndElement.act_and_evaluate_at_identity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.representations.CoIndElement.evaluate">
+<code class="descname">evaluate</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.CoIndElement.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.representations.CoIndElement.evaluate_at_identity">
+<code class="descname">evaluate_at_identity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.CoIndElement.evaluate_at_identity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.representations.CoIndElement.values">
+<code class="descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.CoIndElement.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="darmonpoints.representations.CoIndModule">
+<em class="property">class </em><code class="descclassname">darmonpoints.representations.</code><code class="descname">CoIndModule</code><span class="sig-paren">(</span><em>G</em>, <em>V</em>, <em>trivial_action=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.CoIndModule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.structure.parent.Parent</span></code></p>
+<p>TESTS:</p>
+<p>sage: from darmonpoints.homology import *
+sage: from darmonpoints.cohomology_abstract import *
+sage: from darmonpoints.sarithgroup import *
+sage: G = BigArithGroup(5,6,1,outfile=&#8217;/tmp/darmonpoints.tmp&#8217;) #  optional - magma</p>
+<dl class="attribute">
+<dt id="darmonpoints.representations.CoIndModule.Element">
+<code class="descname">Element</code><a class="headerlink" href="#darmonpoints.representations.CoIndModule.Element" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#darmonpoints.representations.CoIndElement" title="darmonpoints.representations.CoIndElement"><code class="xref py py-class docutils literal"><span class="pre">CoIndElement</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.representations.CoIndModule.act_by_genpow">
+<code class="descname">act_by_genpow</code><span class="sig-paren">(</span><em>i</em>, <em>a</em>, <em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.CoIndModule.act_by_genpow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.representations.CoIndModule.acting_matrix">
+<code class="descname">acting_matrix</code><span class="sig-paren">(</span><em>g</em>, <em>prec=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.CoIndModule.acting_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<span class="go">....:     def __init__(self, x):</span>
+<span class="go">....:         self._x = x</span>
+<span class="go">....:     @cached_method</span>
+<span class="go">....:     def f(self,*args):</span>
+<span class="go">....:         return self._x^2</span>
+<span class="gp">sage: </span><span class="n">a</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{}</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+<span class="go">4</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{((), ()): 4}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.representations.CoIndModule.base_field">
+<code class="descname">base_field</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.CoIndModule.base_field" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.representations.CoIndModule.base_ring">
+<code class="descname">base_ring</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.CoIndModule.base_ring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.representations.CoIndModule.basis">
+<code class="descname">basis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.CoIndModule.basis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.representations.CoIndModule.coefficient_module">
+<code class="descname">coefficient_module</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.CoIndModule.coefficient_module" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.representations.CoIndModule.dimension">
+<code class="descname">dimension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.CoIndModule.dimension" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.representations.CoIndModule.gen">
+<code class="descname">gen</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.CoIndModule.gen" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<span class="go">....:     def __init__(self, x):</span>
+<span class="go">....:         self._x = x</span>
+<span class="go">....:     @cached_method</span>
+<span class="go">....:     def f(self,*args):</span>
+<span class="go">....:         return self._x^2</span>
+<span class="gp">sage: </span><span class="n">a</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{}</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+<span class="go">4</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{((), ()): 4}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.representations.CoIndModule.gens">
+<code class="descname">gens</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.CoIndModule.gens" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<span class="go">....:     def __init__(self, x):</span>
+<span class="go">....:         self._x = x</span>
+<span class="go">....:     @cached_method</span>
+<span class="go">....:     def f(self):</span>
+<span class="go">....:         return self._x^2</span>
+<span class="gp">sage: </span><span class="n">a</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span>
+<span class="go">None</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+<span class="go">4</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.representations.CoIndModule.get_action_data">
+<code class="descname">get_action_data</code><span class="sig-paren">(</span><em>g</em>, <em>idx=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.CoIndModule.get_action_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<span class="go">....:     def __init__(self, x):</span>
+<span class="go">....:         self._x = x</span>
+<span class="go">....:     @cached_method</span>
+<span class="go">....:     def f(self,*args):</span>
+<span class="go">....:         return self._x^2</span>
+<span class="gp">sage: </span><span class="n">a</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{}</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+<span class="go">4</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{((), ()): 4}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.representations.CoIndModule.group">
+<code class="descname">group</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.CoIndModule.group" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.representations.CoIndModule.trivial_action">
+<code class="descname">trivial_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.CoIndModule.trivial_action" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="darmonpoints.representations.IndAction">
+<em class="property">class </em><code class="descclassname">darmonpoints.representations.</code><code class="descname">IndAction</code><span class="sig-paren">(</span><em>algebra</em>, <em>V</em>, <em>G</em>, <em>trivial_action=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.IndAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#darmonpoints.representations.CoIndAction" title="darmonpoints.representations.CoIndAction"><code class="xref py py-class docutils literal"><span class="pre">darmonpoints.representations.CoIndAction</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="darmonpoints.representations.IndElement">
+<em class="property">class </em><code class="descclassname">darmonpoints.representations.</code><code class="descname">IndElement</code><span class="sig-paren">(</span><em>parent</em>, <em>data</em>, <em>check=True</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.IndElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#darmonpoints.representations.CoIndElement" title="darmonpoints.representations.CoIndElement"><code class="xref py py-class docutils literal"><span class="pre">darmonpoints.representations.CoIndElement</span></code></a></p>
+<dl class="method">
+<dt id="darmonpoints.representations.IndElement.evaluate_at_identity">
+<code class="descname">evaluate_at_identity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.IndElement.evaluate_at_identity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="darmonpoints.representations.IndModule">
+<em class="property">class </em><code class="descclassname">darmonpoints.representations.</code><code class="descname">IndModule</code><span class="sig-paren">(</span><em>G</em>, <em>V</em>, <em>trivial_action=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.IndModule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#darmonpoints.representations.CoIndModule" title="darmonpoints.representations.CoIndModule"><code class="xref py py-class docutils literal"><span class="pre">darmonpoints.representations.CoIndModule</span></code></a></p>
+<dl class="attribute">
+<dt id="darmonpoints.representations.IndModule.Element">
+<code class="descname">Element</code><a class="headerlink" href="#darmonpoints.representations.IndModule.Element" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#darmonpoints.representations.IndElement" title="darmonpoints.representations.IndElement"><code class="xref py py-class docutils literal"><span class="pre">IndElement</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="sigma-0">
+<h1>Sigma_0<a class="headerlink" href="#sigma-0" title="Permalink to this headline">¶</a></h1>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Overconvergent module of distributions</a></li>
+<li><a class="reference internal" href="#module-darmonpoints.representations">Representations</a></li>
+<li><a class="reference internal" href="#sigma-0">Sigma_0</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="integration.html"
+                        title="previous chapter">Integrals</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="internals.html"
+                        title="next chapter">Mixed extensions</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/distributions.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="internals.html" title="Mixed extensions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="integration.html" title="Integrals"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Darmon Points 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2017, Marc Masdeu.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+    </div>
+  </body>
+</html>
