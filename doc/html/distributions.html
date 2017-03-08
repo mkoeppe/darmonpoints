@@ -101,8 +101,6 @@ describe overconvergent p-adic automorphic forms.</p>
 <dt id="darmonpoints.ocmodule.OCVn.base_ring">
 <code class="descname">base_ring</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVn.base_ring" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function returns the base ring of the overconvergent element.</p>
-<p>EXAMPLES:</p>
-<p>This example illustrates ...</p>
 </dd></dl>
 
 <dl class="method">
@@ -118,9 +116,6 @@ the lines after the first need to be indented.</li>
 <li><code class="docutils literal"><span class="pre">y</span></code> - integer (default: 2) the ...</li>
 </ul>
 </div></blockquote>
-<p>OUTPUT:</p>
-<p>integer &#8211; the ...</p>
-<p>EXAMPLES:</p>
 </dd></dl>
 
 <dl class="method">
@@ -188,29 +183,25 @@ assumed to be the a column vector.</li>
 <dl class="method">
 <dt id="darmonpoints.ocmodule.OCVnElement.element">
 <code class="descname">element</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVnElement.element" title="Permalink to this definition">¶</a></dt>
-<dd><p>EXAMPLES:</p>
-<p>This example illustrates ...</p>
+<dd><p>The element <code class="docutils literal"><span class="pre">self</span></code> represents.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="darmonpoints.ocmodule.OCVnElement.evaluate_at_poly">
 <code class="descname">evaluate_at_poly</code><span class="sig-paren">(</span><em>P</em>, <em>R=None</em>, <em>depth=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVnElement.evaluate_at_poly" title="Permalink to this definition">¶</a></dt>
-<dd><p>EXAMPLES:</p>
-<p>This example illustrates ...</p>
+<dd><p>Evaluate <code class="docutils literal"><span class="pre">self</span></code> at a polynomial</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="darmonpoints.ocmodule.OCVnElement.list">
 <code class="descname">list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVnElement.list" title="Permalink to this definition">¶</a></dt>
-<dd><p>EXAMPLES:</p>
-<p>This example illustrates ...</p>
+<dd><p>The element <code class="docutils literal"><span class="pre">self</span></code> represents.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="darmonpoints.ocmodule.OCVnElement.matrix_rep">
 <code class="descname">matrix_rep</code><span class="sig-paren">(</span><em>B=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVnElement.matrix_rep" title="Permalink to this definition">¶</a></dt>
-<dd><p>EXAMPLES:</p>
-<p>This example illustrates ...</p>
+<dd><p>Returns a matrix representation of <code class="docutils literal"><span class="pre">self</span></code>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -221,8 +212,7 @@ assumed to be the a column vector.</li>
 <dl class="method">
 <dt id="darmonpoints.ocmodule.OCVnElement.r_act_by">
 <code class="descname">r_act_by</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVnElement.r_act_by" title="Permalink to this definition">¶</a></dt>
-<dd><p>EXAMPLES:</p>
-<p>This example illustrates ...</p>
+<dd><p>Act on the right by a matrix.</p>
 </dd></dl>
 
 <dl class="method">
@@ -233,8 +223,8 @@ assumed to be the a column vector.</li>
 <dl class="method">
 <dt id="darmonpoints.ocmodule.OCVnElement.valuation">
 <code class="descname">valuation</code><span class="sig-paren">(</span><em>l=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.ocmodule.OCVnElement.valuation" title="Permalink to this definition">¶</a></dt>
-<dd><p>EXAMPLES:</p>
-<p>This example illustrates ...</p>
+<dd><p>The <span class="math">\(l\)</span>-adic valuation of <code class="docutils literal"><span class="pre">self</span></code>.</p>
+<p>INPUT: a prime <span class="math">\(l\)</span>. The default (None) uses the prime of the parent.</p>
 </dd></dl>
 
 </dd></dl>
@@ -301,11 +291,14 @@ indexed by the cosets of G(p) G(1).</p>
 <dt id="darmonpoints.representations.CoIndModule">
 <em class="property">class </em><code class="descclassname">darmonpoints.representations.</code><code class="descname">CoIndModule</code><span class="sig-paren">(</span><em>G</em>, <em>V</em>, <em>trivial_action=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.representations.CoIndModule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.structure.parent.Parent</span></code></p>
+<p>A co-induced module.</p>
 <p>TESTS:</p>
-<p>sage: from darmonpoints.homology import *
-sage: from darmonpoints.cohomology_abstract import *
-sage: from darmonpoints.sarithgroup import *
-sage: G = BigArithGroup(5,6,1,outfile=&#8217;/tmp/darmonpoints.tmp&#8217;) #  optional - magma</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="kn">from</span> <span class="nn">darmonpoints.homology</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">sage: </span><span class="kn">from</span> <span class="nn">darmonpoints.cohomology_abstract</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">sage: </span><span class="kn">from</span> <span class="nn">darmonpoints.sarithgroup</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">sage: </span><span class="n">G</span> <span class="o">=</span> <span class="n">BigArithGroup</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">outfile</span><span class="o">=</span><span class="s1">&#39;/tmp/darmonpoints.tmp&#39;</span><span class="p">)</span> <span class="c1">#  optional - magma</span>
+</pre></div>
+</div>
 <dl class="attribute">
 <dt id="darmonpoints.representations.CoIndModule.Element">
 <code class="descname">Element</code><a class="headerlink" href="#darmonpoints.representations.CoIndModule.Element" title="Permalink to this definition">¶</a></dt>
@@ -468,9 +461,6 @@ sage: G = BigArithGroup(5,6,1,outfile=&#8217;/tmp/darmonpoints.tmp&#8217;) #  op
 </dd></dl>
 
 </div>
-<div class="section" id="sigma-0">
-<h1>Sigma_0<a class="headerlink" href="#sigma-0" title="Permalink to this headline">¶</a></h1>
-</div>
 
 
           </div>
@@ -482,7 +472,6 @@ sage: G = BigArithGroup(5,6,1,outfile=&#8217;/tmp/darmonpoints.tmp&#8217;) #  op
   <ul>
 <li><a class="reference internal" href="#">Overconvergent module of distributions</a></li>
 <li><a class="reference internal" href="#module-darmonpoints.representations">Representations</a></li>
-<li><a class="reference internal" href="#sigma-0">Sigma_0</a></li>
 </ul>
 
   <h4>Previous topic</h4>

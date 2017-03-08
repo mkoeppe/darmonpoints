@@ -61,14 +61,12 @@
 <em class="property">class </em><code class="descclassname">darmonpoints.arithgroup_element.</code><code class="descname">ArithGroupElement</code><span class="sig-paren">(</span><em>parent</em>, <em>word_rep=None</em>, <em>quaternion_rep=None</em>, <em>check=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup_element.ArithGroupElement" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.structure.element.MultiplicativeGroupElement</span></code></p>
 <p>Initialize.</p>
-<blockquote>
-<div><p>INPUT:</p>
+<p>INPUT:</p>
 <ul class="simple">
-<li>a list of the form [(g1,a1),(g2,a2),...,(gn,an)] where the gi are indices</li>
+<li>a list of the form [(g1,a1),(g2,a2),...,(gn,an)] where the gi are indices
+refering to fixed generators, and the ai are integers, or
+an element of the quaternion algebra <code class="docutils literal"><span class="pre">self.parent().quaternion_algebra()</span></code>.</li>
 </ul>
-<p>refering to fixed generators, and the ai are integers, or
-an element of the quaternion algebra <code class="docutils literal"><span class="pre">self.parent().quaternion_algebra()</span></code></p>
-</div></blockquote>
 <dl class="method">
 <dt id="darmonpoints.arithgroup_element.ArithGroupElement.check_consistency">
 <code class="descname">check_consistency</code><span class="sig-paren">(</span><em>q=None</em>, <em>wd=None</em>, <em>txt=''</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.arithgroup_element.ArithGroupElement.check_consistency" title="Permalink to this definition">¶</a></dt>
