@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Mixed extensions &mdash; Darmon Points 3.1.6 documentation</title>
+    <title>Mixed extensions &mdash; Darmon Points 3.1.7 documentation</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.1.6',
+        VERSION:     '3.1.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/MathJax.js?config=TeX-AMS_HTML-full,../mathjax_sage.js"></script>
-    <link rel="top" title="Darmon Points 3.1.6 documentation" href="index.html" />
+    <link rel="top" title="Darmon Points 3.1.7 documentation" href="index.html" />
     <link rel="prev" title="Overconvergent module of distributions" href="distributions.html" /> 
   </head>
   <body role="document">
@@ -40,7 +40,7 @@
         <li class="right" >
           <a href="distributions.html" title="Overconvergent module of distributions"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Darmon Points 3.1.6 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Darmon Points 3.1.7 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -62,32 +62,32 @@
 <span class="gp">sage: </span><span class="n">p</span> <span class="o">=</span> <span class="mi">7</span>
 <span class="gp">sage: </span><span class="n">K0</span><span class="o">.&lt;</span><span class="n">z</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">Qq</span><span class="p">(</span><span class="n">p</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
 <span class="gp">sage: </span><span class="n">K</span> <span class="o">=</span> <span class="n">QuadExt</span><span class="p">(</span><span class="n">K0</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
-<span class="gp">sage: </span><span class="k">print</span> <span class="n">K</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">K</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="k">print</span><span class="p">(</span><span class="n">K</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">K</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 <span class="go">1 + 7 + O(7^20) + ( 0 )*pi</span>
-<span class="gp">sage: </span><span class="k">print</span> <span class="n">K</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">K</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="k">print</span><span class="p">(</span><span class="n">K</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">K</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 <span class="go">5 + 6*7 + 6*7^2 + 6*7^3 + 6*7^4 + 6*7^5 + 6*7^6 + 6*7^7 + 6*7^8 + 6*7^9 + 6*7^10 + 6*7^11 + 6*7^12 + 6*7^13 + 6*7^14 + 6*7^15 + 6*7^16 + 6*7^17 + 6*7^18 + 6*7^19 + O(7^20) + ( 0 )*pi</span>
-<span class="gp">sage: </span><span class="k">print</span> <span class="n">K</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">K</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="k">print</span><span class="p">(</span><span class="n">K</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">K</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 <span class="go">1 + 2*7 + O(7^20) + ( O(7^20) )*pi</span>
-<span class="gp">sage: </span><span class="k">print</span> <span class="n">K</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+<span class="gp">sage: </span><span class="k">print</span><span class="p">(</span><span class="n">K</span><span class="o">.</span><span class="n">gen</span><span class="p">())</span>
 <span class="go">0 + ( 1 + O(7^20) )*pi</span>
-<span class="gp">sage: </span><span class="k">print</span> <span class="n">K</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span><span class="o">**</span><span class="mi">2</span>
+<span class="gp">sage: </span><span class="k">print</span><span class="p">(</span><span class="n">K</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="go">7 + O(7^21) + ( O(7^20) )*pi</span>
-<span class="gp">sage: </span><span class="k">print</span> <span class="p">(</span><span class="n">K</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">K</span><span class="o">.</span><span class="n">gen</span><span class="p">())</span><span class="o">**</span><span class="mi">2</span>
+<span class="gp">sage: </span><span class="k">print</span><span class="p">((</span><span class="n">K</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">K</span><span class="o">.</span><span class="n">gen</span><span class="p">())</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="go">1 + 7 + O(7^20) + ( 2 + O(7^20) )*pi</span>
-<span class="gp">sage: </span><span class="k">print</span> <span class="n">K</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="n">K</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="k">print</span><span class="p">(</span><span class="n">K</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="n">K</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="go">5 + 3*7 + 3*7^2 + 3*7^3 + 3*7^4 + 3*7^5 + 3*7^6 + 3*7^7 + 3*7^8 + 3*7^9 + 3*7^10 + 3*7^11 + 3*7^12 + 3*7^13 + 3*7^14 + 3*7^15 + 3*7^16 + 3*7^17 + 3*7^18 + 3*7^19 + O(7^20) + ( 0 )*pi</span>
-<span class="gp">sage: </span><span class="k">print</span> <span class="n">K</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">K</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="k">print</span><span class="p">(</span><span class="n">K</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">K</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="go">2 + 5*7 + 4*7^2 + 2*7^4 + 3*7^5 + 4*7^6 + 3*7^7 + 5*7^8 + 7^9 + 4*7^10 + 3*7^11 + 3*7^12 + 4*7^13 + 5*7^14 + 2*7^15 + 5*7^17 + 6*7^18 + 2*7^19 + O(7^20) + ( 5 + 4*7^2 + 3*7^4 + 4*7^5 + 7^6 + 7^7 + 3*7^8 + 3*7^9 + 4*7^11 + 5*7^12 + 5*7^13 + 5*7^14 + 5*7^16 + 3*7^17 + 4*7^18 + O(7^20) )*pi</span>
-<span class="gp">sage: </span><span class="k">print</span> <span class="n">K0</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">K</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+<span class="gp">sage: </span><span class="k">print</span><span class="p">(</span><span class="n">K0</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">K</span><span class="o">.</span><span class="n">gen</span><span class="p">())</span>
 <span class="go">0 + ( 2 + O(7^20) )*pi</span>
-<span class="gp">sage: </span><span class="k">print</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">K</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+<span class="gp">sage: </span><span class="k">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">K</span><span class="o">.</span><span class="n">gen</span><span class="p">())</span>
 <span class="go">0 + ( 2 + O(7^20) )*pi</span>
 
 <span class="gp">sage: </span><span class="n">x</span> <span class="o">=</span> <span class="n">QQ</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
 <span class="gp">sage: </span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="gp">sage: </span><span class="k">print</span> <span class="n">f</span><span class="p">(</span><span class="n">K</span><span class="o">.</span><span class="n">gen</span><span class="p">())</span>
+<span class="gp">sage: </span><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">K</span><span class="o">.</span><span class="n">gen</span><span class="p">()))</span>
 <span class="go">1 + 7 + O(7^20) + ( 4 + 6*7 + 6*7^2 + 6*7^3 + 6*7^4 + 6*7^5 + 6*7^6 + 6*7^7 + 6*7^8 + 6*7^9 + 6*7^10 + 6*7^11 + 6*7^12 + 6*7^13 + 6*7^14 + 6*7^15 + 6*7^16 + 6*7^17 + 6*7^18 + 6*7^19 + O(7^20) )*pi</span>
-<span class="gp">sage: </span><span class="k">print</span> <span class="n">K</span><span class="p">(</span><span class="n">K</span><span class="o">.</span><span class="n">base_ring</span><span class="p">()(</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">sage: </span><span class="k">print</span><span class="p">(</span><span class="n">K</span><span class="p">(</span><span class="n">K</span><span class="o">.</span><span class="n">base_ring</span><span class="p">()(</span><span class="mi">0</span><span class="p">)))</span>
 <span class="go">0 + ( 0 )*pi</span>
 </pre></div>
 </div>
@@ -957,7 +957,7 @@ narrow class number 1.</p>
         <li class="right" >
           <a href="distributions.html" title="Overconvergent module of distributions"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Darmon Points 3.1.6 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Darmon Points 3.1.7 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
