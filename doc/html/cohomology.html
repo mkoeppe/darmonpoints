@@ -1,34 +1,24 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Abstract cohomology class &mdash; Darmon Points 3.1.7 documentation</title>
-    
+    <title>Abstract cohomology class &#8212; Darmon Points 3.2.1 documentation</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '3.1.7',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/MathJax.js?config=TeX-AMS_HTML-full,../mathjax_sage.js"></script>
-    <link rel="top" title="Darmon Points 3.1.7 documentation" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Integrals" href="integration.html" />
     <link rel="prev" title="Arithmetic group elements" href="arithmeticgroups.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -44,7 +34,7 @@
         <li class="right" >
           <a href="arithmeticgroups.html" title="Arithmetic group elements"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Darmon Points 3.1.7 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Darmon Points 3.2.1 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -55,12 +45,12 @@
             
   <div class="section" id="module-darmonpoints.cohomology_abstract">
 <span id="abstract-cohomology-class"></span><h1>Abstract cohomology class<a class="headerlink" href="#module-darmonpoints.cohomology_abstract" title="Permalink to this headline">¶</a></h1>
-<p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+<p>x.__init__(…) initializes x; see help(type(x)) for signature</p>
 <dl class="class">
 <dt id="darmonpoints.cohomology_abstract.CohomologyElement">
 <em class="property">class </em><code class="descclassname">darmonpoints.cohomology_abstract.</code><code class="descname">CohomologyElement</code><span class="sig-paren">(</span><em>parent</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_abstract.CohomologyElement" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.structure.element.ModuleElement</span></code></p>
-<p>Define an element of <span class="math">\(H^1(G,V)\)</span></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sage.structure.element.ModuleElement</span></code></p>
+<p>Define an element of <span class="math notranslate nohighlight">\(H^1(G,V)\)</span></p>
 <dl class="docutils">
 <dt>INPUT:</dt>
 <dd><ul class="first last simple">
@@ -71,7 +61,7 @@
 </dd>
 </dl>
 <p>TESTS:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="kn">from</span> <span class="nn">darmonpoints.sarithgroup</span> <span class="kn">import</span> <span class="n">BigArithGroup</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="kn">from</span> <span class="nn">darmonpoints.sarithgroup</span> <span class="kn">import</span> <span class="n">BigArithGroup</span>
 <span class="gp">sage: </span><span class="kn">from</span> <span class="nn">darmonpoints.cohomology_arithmetic</span> <span class="kn">import</span> <span class="n">ArithCoh</span>
 <span class="gp">sage: </span><span class="n">G</span> <span class="o">=</span> <span class="n">BigArithGroup</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">use_shapiro</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">outfile</span><span class="o">=</span><span class="s1">&#39;/tmp/darmonpoints.tmp&#39;</span><span class="p">)</span> <span class="c1">#  optional - magma</span>
 <span class="gp">sage: </span><span class="n">Coh</span> <span class="o">=</span> <span class="n">ArithCoh</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="c1">#  optional - magma</span>
@@ -86,7 +76,7 @@
 <dt id="darmonpoints.cohomology_abstract.CohomologyElement.evaluate">
 <code class="descname">evaluate</code><span class="sig-paren">(</span><em>x</em>, <em>parallelize=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_abstract.CohomologyElement.evaluate" title="Permalink to this definition">¶</a></dt>
 <dd><p>EXAMPLES:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
 <span class="go">....:     def __init__(self, x):</span>
 <span class="go">....:         self._x = x</span>
 <span class="go">....:     @cached_method</span>
@@ -107,7 +97,7 @@
 <dt id="darmonpoints.cohomology_abstract.CohomologyElement.evaluate_and_identity">
 <code class="descname">evaluate_and_identity</code><span class="sig-paren">(</span><em>x</em>, <em>parallelize=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_abstract.CohomologyElement.evaluate_and_identity" title="Permalink to this definition">¶</a></dt>
 <dd><p>EXAMPLES:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
 <span class="go">....:     def __init__(self, x):</span>
 <span class="go">....:         self._x = x</span>
 <span class="go">....:     @cached_method</span>
@@ -149,7 +139,7 @@
 <dl class="class">
 <dt id="darmonpoints.cohomology_abstract.CohomologyGroup">
 <em class="property">class </em><code class="descclassname">darmonpoints.cohomology_abstract.</code><code class="descname">CohomologyGroup</code><span class="sig-paren">(</span><em>G</em>, <em>V</em>, <em>trivial_action=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_abstract.CohomologyGroup" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.structure.parent.Parent</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sage.structure.parent.Parent</span></code></p>
 <dl class="method">
 <dt id="darmonpoints.cohomology_abstract.CohomologyGroup.coefficient_module">
 <code class="descname">coefficient_module</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_abstract.CohomologyGroup.coefficient_module" title="Permalink to this definition">¶</a></dt>
@@ -159,7 +149,7 @@
 <dt id="darmonpoints.cohomology_abstract.CohomologyGroup.dimension">
 <code class="descname">dimension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_abstract.CohomologyGroup.dimension" title="Permalink to this definition">¶</a></dt>
 <dd><p>EXAMPLES:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
 <span class="go">....:     def __init__(self, x):</span>
 <span class="go">....:         self._x = x</span>
 <span class="go">....:     @cached_method</span>
@@ -190,7 +180,7 @@
 <dt id="darmonpoints.cohomology_abstract.CohomologyGroup.gen">
 <code class="descname">gen</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_abstract.CohomologyGroup.gen" title="Permalink to this definition">¶</a></dt>
 <dd><p>EXAMPLES:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
 <span class="go">....:     def __init__(self, x):</span>
 <span class="go">....:         self._x = x</span>
 <span class="go">....:     @cached_method</span>
@@ -235,7 +225,7 @@
 <p>sage: from darmonpoints.sarithgroup import *
 sage: from darmonpoints.cohomology_abstract import *
 sage: from darmonpoints.ocmodule import *
-sage: GS = BigArithGroup(5, 6,1,use_shapiro=False,outfile=&#8217;/tmp/darmonpoints.tmp&#8217;) #  optional - magma
+sage: GS = BigArithGroup(5, 6,1,use_shapiro=False,outfile=’/tmp/darmonpoints.tmp’) #  optional - magma
 sage: G = GS.large_group() #  optional - magma
 sage: V = OCVn(5,1)     #  optional - magma
 sage: Coh = CohomologyGroup(G,V,trivial_action = False) #  optional - magma</p>
@@ -266,7 +256,7 @@ sage: F.&lt;r&gt; = QuadraticField(5)
 sage: P = F.ideal(3/2*r + 1/2)
 sage: D = F.ideal(3)
 sage: abtuple = quaternion_algebra_invariants_from_ramification(F,D,F.real_places()[:1]) #  optional - magma
-sage: G = BigArithGroup(P,abtuple, F.ideal(1), grouptype = &#8216;PSL2&#8217;,outfile = &#8220;/tmp/darmonpoints.tmp&#8221;) #  optional - magma
+sage: G = BigArithGroup(P,abtuple, F.ideal(1), grouptype = ‘PSL2’,outfile = “/tmp/darmonpoints.tmp”) #  optional - magma
 sage: H = ArithCoh(G)           #  optional - magma
 sage: primes = F.primes_of_degree_one_list(10) #  optional - magma
 sage: H.hecke_matrix(primes[0]).charpoly() #  optional - magma
@@ -277,17 +267,18 @@ x^2 - 4</p>
 <dl class="class">
 <dt id="darmonpoints.cohomology_arithmetic.ArithAction">
 <em class="property">class </em><code class="descclassname">darmonpoints.cohomology_arithmetic.</code><code class="descname">ArithAction</code><span class="sig-paren">(</span><em>G</em>, <em>M</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.categories.action.Action</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sage.categories.action.Action</span></code></p>
+<p>Encodes de action of an arithmetic group on the distributions module</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="darmonpoints.cohomology_arithmetic.ArithCoh">
-<em class="property">class </em><code class="descclassname">darmonpoints.cohomology_arithmetic.</code><code class="descname">ArithCoh</code><span class="sig-paren">(</span><em>G</em>, <em>overconvergent=False</em>, <em>base=None</em>, <em>use_ps_dists=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCoh" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#darmonpoints.cohomology_abstract.CohomologyGroup" title="darmonpoints.cohomology_abstract.CohomologyGroup"><code class="xref py py-class docutils literal"><span class="pre">darmonpoints.cohomology_abstract.CohomologyGroup</span></code></a></p>
+<em class="property">class </em><code class="descclassname">darmonpoints.cohomology_arithmetic.</code><code class="descname">ArithCoh</code><span class="sig-paren">(</span><em>G</em>, <em>overconvergent=0</em>, <em>base=None</em>, <em>use_ps_dists=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCoh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#darmonpoints.cohomology_abstract.CohomologyGroup" title="darmonpoints.cohomology_abstract.CohomologyGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">darmonpoints.cohomology_abstract.CohomologyGroup</span></code></a></p>
 <dl class="attribute">
 <dt id="darmonpoints.cohomology_arithmetic.ArithCoh.Element">
 <code class="descname">Element</code><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCoh.Element" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#darmonpoints.cohomology_arithmetic.ArithCohElement" title="darmonpoints.cohomology_arithmetic.ArithCohElement"><code class="xref py py-class docutils literal"><span class="pre">ArithCohElement</span></code></a></p>
+<dd><p>alias of <a class="reference internal" href="#darmonpoints.cohomology_arithmetic.ArithCohElement" title="darmonpoints.cohomology_arithmetic.ArithCohElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArithCohElement</span></code></a></p>
 </dd></dl>
 
 <dl class="method">
@@ -302,14 +293,40 @@ x^2 - 4</p>
 
 <dl class="method">
 <dt id="darmonpoints.cohomology_arithmetic.ArithCoh.apply_Up">
-<code class="descname">apply_Up</code><span class="sig-paren">(</span><em>c</em>, <em>group=None</em>, <em>scale=1</em>, <em>parallelize=False</em>, <em>times=0</em>, <em>progress_bar=False</em>, <em>method='naive'</em>, <em>repslocal=None</em>, <em>steps=1</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCoh.apply_Up" title="Permalink to this definition">¶</a></dt>
-<dd><p>Apply the Up Hecke operator operator to <code class="docutils literal"><span class="pre">c</span></code>.</p>
+<code class="descname">apply_Up</code><span class="sig-paren">(</span><em>c</em>, <em>group=None</em>, <em>scale=1</em>, <em>parallelize=False</em>, <em>times=0</em>, <em>progress_bar=False</em>, <em>method='naive'</em>, <em>repslocal=None</em>, <em>Up_reps=None</em>, <em>steps=1</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCoh.apply_Up" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the Up Hecke operator operator to <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p>
 </dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.cohomology_arithmetic.ArithCoh.apply_Up_bianchi">
+<code class="descname">apply_Up_bianchi</code><span class="sig-paren">(</span><em>c</em>, <em>group=None</em>, <em>scale=1</em>, <em>progress_bar=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCoh.apply_Up_bianchi" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="darmonpoints.cohomology_arithmetic.ArithCoh.apply_hecke_operator">
 <code class="descname">apply_hecke_operator</code><span class="sig-paren">(</span><em>c</em>, <em>l</em>, <em>hecke_reps=None</em>, <em>group=None</em>, <em>scale=1</em>, <em>use_magma=True</em>, <em>g0=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCoh.apply_hecke_operator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Apply the l-th Hecke operator operator to <code class="docutils literal"><span class="pre">c</span></code>.</p>
+<dd><p>Apply the l-th Hecke operator operator to <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.cohomology_arithmetic.ArithCoh.get_Up_reps_bianchi_local">
+<code class="descname">get_Up_reps_bianchi_local</code><span class="sig-paren">(</span><em>prec</em>, <em>pi</em>, <em>pi_bar</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCoh.get_Up_reps_bianchi_local" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<span class="go">....:     def __init__(self, x):</span>
+<span class="go">....:         self._x = x</span>
+<span class="go">....:     @cached_method</span>
+<span class="go">....:     def f(self,*args):</span>
+<span class="go">....:         return self._x^2</span>
+<span class="gp">sage: </span><span class="n">a</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{}</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+<span class="go">4</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{((), ()): 4}</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -341,7 +358,7 @@ x^2 - 4</p>
 <dt id="darmonpoints.cohomology_arithmetic.ArithCoh.hecke_matrix">
 <code class="descname">hecke_matrix</code><span class="sig-paren">(</span><em>l</em>, <em>use_magma=True</em>, <em>g0=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCoh.hecke_matrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>EXAMPLES:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
 <span class="go">....:     def __init__(self, x):</span>
 <span class="go">....:         self._x = x</span>
 <span class="go">....:     @cached_method</span>
@@ -360,7 +377,13 @@ x^2 - 4</p>
 
 <dl class="method">
 <dt id="darmonpoints.cohomology_arithmetic.ArithCoh.improve">
-<code class="descname">improve</code><span class="sig-paren">(</span><em>Phi</em>, <em>prec=None</em>, <em>sign=None</em>, <em>parallelize=False</em>, <em>progress_bar=False</em>, <em>method='bigmatrix'</em>, <em>steps=1</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCoh.improve" title="Permalink to this definition">¶</a></dt>
+<code class="descname">improve</code><span class="sig-paren">(</span><em>Phi</em>, <em>prec=None</em>, <em>sign=None</em>, <em>parallelize=False</em>, <em>progress_bar=False</em>, <em>method='naive'</em>, <em>steps=1</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCoh.improve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Repeatedly applies U_p.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.cohomology_arithmetic.ArithCoh.improve_bianchi">
+<code class="descname">improve_bianchi</code><span class="sig-paren">(</span><em>Phi</em>, <em>prec=None</em>, <em>sign=None</em>, <em>parallelize=False</em>, <em>progress_bar=False</em>, <em>method='naive'</em>, <em>steps=1</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCoh.improve_bianchi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Repeatedly applies U_p.</p>
 </dd></dl>
 
@@ -374,29 +397,49 @@ x^2 - 4</p>
 <dl class="class">
 <dt id="darmonpoints.cohomology_arithmetic.ArithCohElement">
 <em class="property">class </em><code class="descclassname">darmonpoints.cohomology_arithmetic.</code><code class="descname">ArithCohElement</code><span class="sig-paren">(</span><em>parent</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCohElement" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#darmonpoints.cohomology_abstract.CohomologyElement" title="darmonpoints.cohomology_abstract.CohomologyElement"><code class="xref py py-class docutils literal"><span class="pre">darmonpoints.cohomology_abstract.CohomologyElement</span></code></a></p>
-<p>Define an element of <span class="math">\(H^1(G,V)\)</span></p>
-<dl class="docutils">
-<dt>INPUT:</dt>
-<dd><ul class="first last simple">
-<li>G: a BigArithGroup</li>
-<li>V: a CoeffModule</li>
-<li>data: a list</li>
-</ul>
-</dd>
-</dl>
-<p>TESTS:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="kn">from</span> <span class="nn">darmonpoints.sarithgroup</span> <span class="kn">import</span> <span class="n">BigArithGroup</span>
-<span class="gp">sage: </span><span class="kn">from</span> <span class="nn">darmonpoints.cohomology_arithmetic</span> <span class="kn">import</span> <span class="n">ArithCoh</span>
-<span class="gp">sage: </span><span class="n">G</span> <span class="o">=</span> <span class="n">BigArithGroup</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">use_shapiro</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">outfile</span><span class="o">=</span><span class="s1">&#39;/tmp/darmonpoints.tmp&#39;</span><span class="p">)</span> <span class="c1">#  optional - magma</span>
-<span class="gp">sage: </span><span class="n">Coh</span> <span class="o">=</span> <span class="n">ArithCoh</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="c1">#  optional - magma</span>
-<span class="gp">sage: </span><span class="mi">2</span> <span class="ow">in</span> <span class="n">Coh</span><span class="o">.</span><span class="n">hecke_matrix</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">()</span> <span class="c1">#  optional - magma</span>
-<span class="go">True</span>
-<span class="gp">sage: </span><span class="o">-</span><span class="mi">4</span> <span class="ow">in</span> <span class="n">Coh</span><span class="o">.</span><span class="n">hecke_matrix</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">()</span> <span class="c1">#  optional - magma</span>
-<span class="go">True</span>
-<span class="gp">sage: </span><span class="n">PhiE</span> <span class="o">=</span> <span class="n">Coh</span><span class="o">.</span><span class="n">gen</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#  optional - magma</span>
+<dd><p>Bases: <a class="reference internal" href="#darmonpoints.cohomology_abstract.CohomologyElement" title="darmonpoints.cohomology_abstract.CohomologyElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">darmonpoints.cohomology_abstract.CohomologyElement</span></code></a></p>
+<dl class="method">
+<dt id="darmonpoints.cohomology_arithmetic.ArithCohElement.BI">
+<code class="descname">BI</code><span class="sig-paren">(</span><em>a</em>, <em>j</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCohElement.BI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.cohomology_arithmetic.ArithCohElement.BI_old">
+<code class="descname">BI_old</code><span class="sig-paren">(</span><em>a</em>, <em>j</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCohElement.BI_old" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<span class="go">....:     def __init__(self, x):</span>
+<span class="go">....:         self._x = x</span>
+<span class="go">....:     @cached_method</span>
+<span class="go">....:     def f(self,*args):</span>
+<span class="go">....:         return self._x^2</span>
+<span class="gp">sage: </span><span class="n">a</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{}</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+<span class="go">4</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{((), ()): 4}</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.cohomology_arithmetic.ArithCohElement.Tq_eigenvalue">
+<code class="descname">Tq_eigenvalue</code><span class="sig-paren">(</span><em>ell</em>, <em>check=True</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCohElement.Tq_eigenvalue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.cohomology_arithmetic.ArithCohElement.basic_integral">
+<code class="descname">basic_integral</code><span class="sig-paren">(</span><em>a</em>, <em>j</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCohElement.basic_integral" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.cohomology_arithmetic.ArithCohElement.get_Lseries_term">
+<code class="descname">get_Lseries_term</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCohElement.get_Lseries_term" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <span class="math notranslate nohighlight">\(n\)</span>-th coefficient of the <span class="math notranslate nohighlight">\(p\)</span>-adic <span class="math notranslate nohighlight">\(L\)</span>-series</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="darmonpoints.cohomology_arithmetic.ArithCohElement.get_liftee">
 <code class="descname">get_liftee</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCohElement.get_liftee" title="Permalink to this definition">¶</a></dt>
@@ -410,14 +453,20 @@ x^2 - 4</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="darmonpoints.cohomology_arithmetic.LocalAction">
-<em class="property">class </em><code class="descclassname">darmonpoints.cohomology_arithmetic.</code><code class="descname">LocalAction</code><span class="sig-paren">(</span><em>G</em>, <em>M</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.LocalAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.categories.action.Action</span></code></p>
+<dt id="darmonpoints.cohomology_arithmetic.BianchiArithAction">
+<em class="property">class </em><code class="descclassname">darmonpoints.cohomology_arithmetic.</code><code class="descname">BianchiArithAction</code><span class="sig-paren">(</span><em>G</em>, <em>M</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.BianchiArithAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sage.categories.action.Action</span></code></p>
+<p>Encodes de action of an arithmetic group on the distributions module</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="darmonpoints.cohomology_arithmetic.find_newans">
 <code class="descclassname">darmonpoints.cohomology_arithmetic.</code><code class="descname">find_newans</code><span class="sig-paren">(</span><em>Coh</em>, <em>glocs</em>, <em>ti</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.find_newans" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="darmonpoints.cohomology_arithmetic.get_overconvergent_class_bianchi">
+<code class="descclassname">darmonpoints.cohomology_arithmetic.</code><code class="descname">get_overconvergent_class_bianchi</code><span class="sig-paren">(</span><em>P</em>, <em>phiE</em>, <em>G</em>, <em>prec</em>, <em>aP</em>, <em>aPbar</em>, <em>sign_at_infinity</em>, <em>sign_ap</em>, <em>parallelize=False</em>, <em>progress_bar=False</em>, <em>method=None</em>, <em>Ename='unknown'</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.get_overconvergent_class_bianchi" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -433,38 +482,28 @@ x^2 - 4</p>
 </div>
 <div class="section" id="module-darmonpoints.homology_abstract">
 <span id="abstract-homology-class"></span><h1>Abstract homology class<a class="headerlink" href="#module-darmonpoints.homology_abstract" title="Permalink to this headline">¶</a></h1>
-<p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+<p>x.__init__(…) initializes x; see help(type(x)) for signature</p>
 <dl class="class">
 <dt id="darmonpoints.homology_abstract.ArithHomology">
 <em class="property">class </em><code class="descclassname">darmonpoints.homology_abstract.</code><code class="descname">ArithHomology</code><span class="sig-paren">(</span><em>G</em>, <em>V</em>, <em>trivial_action=True</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.homology_abstract.ArithHomology" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#darmonpoints.homology_abstract.HomologyGroup" title="darmonpoints.homology_abstract.HomologyGroup"><code class="xref py py-class docutils literal"><span class="pre">darmonpoints.homology_abstract.HomologyGroup</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#darmonpoints.homology_abstract.HomologyGroup" title="darmonpoints.homology_abstract.HomologyGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">darmonpoints.homology_abstract.HomologyGroup</span></code></a></p>
 <dl class="class">
 <dt id="darmonpoints.homology_abstract.ArithHomology.Element">
 <em class="property">class </em><code class="descname">Element</code><span class="sig-paren">(</span><em>parent</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.homology_abstract.ArithHomology.Element" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#darmonpoints.homology_abstract.HomologyElement" title="darmonpoints.homology_abstract.HomologyElement"><code class="xref py py-class docutils literal"><span class="pre">darmonpoints.homology_abstract.HomologyElement</span></code></a></p>
-<p>Define an element of <span class="math">\(H_1(G,V)\)</span></p>
-<dl class="docutils">
-<dt>INPUT:</dt>
-<dd><ul class="first last simple">
-<li>G: a BigArithGroup</li>
-<li>V: a CoeffModule</li>
-<li>data: a list</li>
-</ul>
-</dd>
-</dl>
+<dd><p>Bases: <a class="reference internal" href="#darmonpoints.homology_abstract.HomologyElement" title="darmonpoints.homology_abstract.HomologyElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">darmonpoints.homology_abstract.HomologyElement</span></code></a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="darmonpoints.homology_abstract.ArithHomology.apply_hecke_operator">
-<code class="descclassname">ArithHomology.</code><code class="descname">apply_hecke_operator</code><span class="sig-paren">(</span><em>c</em>, <em>l</em>, <em>hecke_reps=None</em>, <em>group=None</em>, <em>scale=1</em>, <em>use_magma=True</em>, <em>g0=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.homology_abstract.ArithHomology.apply_hecke_operator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Apply the l-th Hecke operator operator to <code class="docutils literal"><span class="pre">c</span></code>.</p>
+<code class="descname">apply_hecke_operator</code><span class="sig-paren">(</span><em>c</em>, <em>l</em>, <em>hecke_reps=None</em>, <em>group=None</em>, <em>scale=1</em>, <em>use_magma=True</em>, <em>g0=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.homology_abstract.ArithHomology.apply_hecke_operator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the l-th Hecke operator operator to <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="darmonpoints.homology_abstract.ArithHomology.hecke_matrix">
-<code class="descclassname">ArithHomology.</code><code class="descname">hecke_matrix</code><span class="sig-paren">(</span><em>l</em>, <em>use_magma=True</em>, <em>g0=None</em>, <em>with_torsion=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.homology_abstract.ArithHomology.hecke_matrix" title="Permalink to this definition">¶</a></dt>
+<code class="descname">hecke_matrix</code><span class="sig-paren">(</span><em>l</em>, <em>use_magma=True</em>, <em>g0=None</em>, <em>with_torsion=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.homology_abstract.ArithHomology.hecke_matrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>EXAMPLES:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
 <span class="go">....:     def __init__(self, x):</span>
 <span class="go">....:         self._x = x</span>
 <span class="go">....:     @cached_method</span>
@@ -486,24 +525,14 @@ x^2 - 4</p>
 <dl class="class">
 <dt id="darmonpoints.homology_abstract.ArithHomologyElement">
 <em class="property">class </em><code class="descclassname">darmonpoints.homology_abstract.</code><code class="descname">ArithHomologyElement</code><span class="sig-paren">(</span><em>parent</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.homology_abstract.ArithHomologyElement" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#darmonpoints.homology_abstract.HomologyElement" title="darmonpoints.homology_abstract.HomologyElement"><code class="xref py py-class docutils literal"><span class="pre">darmonpoints.homology_abstract.HomologyElement</span></code></a></p>
-<p>Define an element of <span class="math">\(H_1(G,V)\)</span></p>
-<dl class="docutils">
-<dt>INPUT:</dt>
-<dd><ul class="first last simple">
-<li>G: a BigArithGroup</li>
-<li>V: a CoeffModule</li>
-<li>data: a list</li>
-</ul>
-</dd>
-</dl>
+<dd><p>Bases: <a class="reference internal" href="#darmonpoints.homology_abstract.HomologyElement" title="darmonpoints.homology_abstract.HomologyElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">darmonpoints.homology_abstract.HomologyElement</span></code></a></p>
 </dd></dl>
 
 <dl class="class">
 <dt id="darmonpoints.homology_abstract.HomologyElement">
 <em class="property">class </em><code class="descclassname">darmonpoints.homology_abstract.</code><code class="descname">HomologyElement</code><span class="sig-paren">(</span><em>parent</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.homology_abstract.HomologyElement" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.structure.element.ModuleElement</span></code></p>
-<p>Define an element of <span class="math">\(H_1(G,V)\)</span></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sage.structure.element.ModuleElement</span></code></p>
+<p>Define an element of <span class="math notranslate nohighlight">\(H_1(G,V)\)</span></p>
 <dl class="docutils">
 <dt>INPUT:</dt>
 <dd><ul class="first last simple">
@@ -528,11 +557,11 @@ x^2 - 4</p>
 <dl class="class">
 <dt id="darmonpoints.homology_abstract.HomologyGroup">
 <em class="property">class </em><code class="descclassname">darmonpoints.homology_abstract.</code><code class="descname">HomologyGroup</code><span class="sig-paren">(</span><em>G</em>, <em>V</em>, <em>trivial_action=False</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.homology_abstract.HomologyGroup" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.structure.parent.Parent</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sage.structure.parent.Parent</span></code></p>
 <dl class="attribute">
 <dt id="darmonpoints.homology_abstract.HomologyGroup.Element">
 <code class="descname">Element</code><a class="headerlink" href="#darmonpoints.homology_abstract.HomologyGroup.Element" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#darmonpoints.homology_abstract.HomologyElement" title="darmonpoints.homology_abstract.HomologyElement"><code class="xref py py-class docutils literal"><span class="pre">HomologyElement</span></code></a></p>
+<dd><p>alias of <a class="reference internal" href="#darmonpoints.homology_abstract.HomologyElement" title="darmonpoints.homology_abstract.HomologyElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HomologyElement</span></code></a></p>
 </dd></dl>
 
 <dl class="method">
@@ -544,7 +573,7 @@ x^2 - 4</p>
 <dt id="darmonpoints.homology_abstract.HomologyGroup.free_gens">
 <code class="descname">free_gens</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.homology_abstract.HomologyGroup.free_gens" title="Permalink to this definition">¶</a></dt>
 <dd><p>EXAMPLES:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
 <span class="go">....:     def __init__(self, x):</span>
 <span class="go">....:         self._x = x</span>
 <span class="go">....:     @cached_method</span>
@@ -565,7 +594,7 @@ x^2 - 4</p>
 <dt id="darmonpoints.homology_abstract.HomologyGroup.gen">
 <code class="descname">gen</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.homology_abstract.HomologyGroup.gen" title="Permalink to this definition">¶</a></dt>
 <dd><p>EXAMPLES:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
 <span class="go">....:     def __init__(self, x):</span>
 <span class="go">....:         self._x = x</span>
 <span class="go">....:     @cached_method</span>
@@ -611,7 +640,7 @@ x^2 - 4</p>
 <dt id="darmonpoints.homology_abstract.HomologyGroup.rank">
 <code class="descname">rank</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.homology_abstract.HomologyGroup.rank" title="Permalink to this definition">¶</a></dt>
 <dd><p>EXAMPLES:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
 <span class="go">....:     def __init__(self, x):</span>
 <span class="go">....:         self._x = x</span>
 <span class="go">....:     @cached_method</span>
@@ -654,17 +683,17 @@ x^2 - 4</p>
 </div>
 <div class="section" id="module-darmonpoints.homology">
 <span id="homology-class"></span><h1>Homology class<a class="headerlink" href="#module-darmonpoints.homology" title="Permalink to this headline">¶</a></h1>
-<p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+<p>x.__init__(…) initializes x; see help(type(x)) for signature</p>
 <dl class="class">
 <dt id="darmonpoints.homology.ArithGroupAction">
 <em class="property">class </em><code class="descclassname">darmonpoints.homology.</code><code class="descname">ArithGroupAction</code><span class="sig-paren">(</span><em>G</em>, <em>M</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.homology.ArithGroupAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.categories.action.Action</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sage.categories.action.Action</span></code></p>
 </dd></dl>
 
 <dl class="class">
 <dt id="darmonpoints.homology.Divisor_element">
 <em class="property">class </em><code class="descclassname">darmonpoints.homology.</code><code class="descname">Divisor_element</code><span class="sig-paren">(</span><em>parent</em>, <em>data</em>, <em>ptdata=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.homology.Divisor_element" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.structure.element.ModuleElement</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sage.structure.element.ModuleElement</span></code></p>
 <p>A Divisor is given by a list of pairs (P,nP), where P is a point, and nP is an integer.</p>
 <p>TESTS:</p>
 <blockquote>
@@ -682,7 +711,7 @@ Divisor of degree 7</div></blockquote>
 <dt id="darmonpoints.homology.Divisor_element.degree">
 <code class="descname">degree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.homology.Divisor_element.degree" title="Permalink to this definition">¶</a></dt>
 <dd><p>EXAMPLES:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
 <span class="go">....:     def __init__(self, x):</span>
 <span class="go">....:         self._x = x</span>
 <span class="go">....:     @cached_method</span>
@@ -720,10 +749,15 @@ Divisor of degree 7</div></blockquote>
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="darmonpoints.homology.Divisor_element.scale_by">
+<code class="descname">scale_by</code><span class="sig-paren">(</span><em>a</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.homology.Divisor_element.scale_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="darmonpoints.homology.Divisor_element.size">
 <code class="descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.homology.Divisor_element.size" title="Permalink to this definition">¶</a></dt>
 <dd><p>EXAMPLES:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
 <span class="go">....:     def __init__(self, x):</span>
 <span class="go">....:         self._x = x</span>
 <span class="go">....:     @cached_method</span>
@@ -755,11 +789,11 @@ Divisor of degree 7</div></blockquote>
 <dl class="class">
 <dt id="darmonpoints.homology.Divisors">
 <em class="property">class </em><code class="descclassname">darmonpoints.homology.</code><code class="descname">Divisors</code><span class="sig-paren">(</span><em>field</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.homology.Divisors" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.structure.parent.Parent</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sage.structure.parent.Parent</span></code></p>
 <dl class="attribute">
 <dt id="darmonpoints.homology.Divisors.Element">
 <code class="descname">Element</code><a class="headerlink" href="#darmonpoints.homology.Divisors.Element" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#darmonpoints.homology.Divisor_element" title="darmonpoints.homology.Divisor_element"><code class="xref py py-class docutils literal"><span class="pre">Divisor_element</span></code></a></p>
+<dd><p>alias of <a class="reference internal" href="#darmonpoints.homology.Divisor_element" title="darmonpoints.homology.Divisor_element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Divisor_element</span></code></a></p>
 </dd></dl>
 
 <dl class="method">
@@ -775,16 +809,22 @@ Divisor of degree 7</div></blockquote>
 </dd></dl>
 
 <dl class="class">
+<dt id="darmonpoints.homology.MatrixAction">
+<em class="property">class </em><code class="descclassname">darmonpoints.homology.</code><code class="descname">MatrixAction</code><span class="sig-paren">(</span><em>G</em>, <em>M</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.homology.MatrixAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sage.categories.action.Action</span></code></p>
+</dd></dl>
+
+<dl class="class">
 <dt id="darmonpoints.homology.OneChains">
 <em class="property">class </em><code class="descclassname">darmonpoints.homology.</code><code class="descname">OneChains</code><span class="sig-paren">(</span><em>G</em>, <em>V</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.homology.OneChains" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.structure.parent.Parent</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sage.structure.parent.Parent</span></code></p>
 <p>INPUT:
 - G: an ArithGroup
 - V: a CoeffModule</p>
 <dl class="attribute">
 <dt id="darmonpoints.homology.OneChains.Element">
 <code class="descname">Element</code><a class="headerlink" href="#darmonpoints.homology.OneChains.Element" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#darmonpoints.homology.OneChains_element" title="darmonpoints.homology.OneChains_element"><code class="xref py py-class docutils literal"><span class="pre">OneChains_element</span></code></a></p>
+<dd><p>alias of <a class="reference internal" href="#darmonpoints.homology.OneChains_element" title="darmonpoints.homology.OneChains_element"><code class="xref py py-class docutils literal notranslate"><span class="pre">OneChains_element</span></code></a></p>
 </dd></dl>
 
 <dl class="method">
@@ -802,9 +842,9 @@ Divisor of degree 7</div></blockquote>
 <dl class="class">
 <dt id="darmonpoints.homology.OneChains_element">
 <em class="property">class </em><code class="descclassname">darmonpoints.homology.</code><code class="descname">OneChains_element</code><span class="sig-paren">(</span><em>parent</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.homology.OneChains_element" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sage.structure.element.ModuleElement</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sage.structure.element.ModuleElement</span></code></p>
 <dl class="docutils">
-<dt>Define an element of <span class="math">\(H_1(G,V)\)</span></dt>
+<dt>Define an element of <span class="math notranslate nohighlight">\(H_1(G,V)\)</span></dt>
 <dd><ul class="first last simple">
 <li>data: a list</li>
 </ul>
@@ -828,7 +868,7 @@ Divisor of degree 7</div></blockquote>
 <dt>Use the relations:</dt>
 <dd><ul class="first last simple">
 <li>gh|v = g|v + h|g^-1 v</li>
-<li>g^a|v = g|(v + g^-1v + ... + g^-(a-1)v)</li>
+<li>g^a|v = g|(v + g^-1v + … + g^-(a-1)v)</li>
 <li>g^(-a)|v = - g^a|g^av</li>
 </ul>
 </dd>
@@ -882,13 +922,19 @@ Divisor of degree 7</div></blockquote>
 <dt>Use the relations:</dt>
 <dd><ul class="first last simple">
 <li>gh|v = g|v + h|g^-1 v</li>
-<li>g^a|v = g|(v + g^-1v + ... + g^-(a-1)v)</li>
+<li>g^a|v = g|(v + g^-1v + … + g^-(a-1)v)</li>
 <li>g^(-a)|v = - g^a|g^av</li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="class">
+<dt id="darmonpoints.homology.Scaling">
+<em class="property">class </em><code class="descclassname">darmonpoints.homology.</code><code class="descname">Scaling</code><span class="sig-paren">(</span><em>G</em>, <em>M</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.homology.Scaling" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sage.categories.action.Action</span></code></p>
 </dd></dl>
 
 <dl class="function">
@@ -926,18 +972,20 @@ Divisor of degree 7</div></blockquote>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/cohomology.txt"
+      <li><a href="_sources/cohomology.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -959,12 +1007,12 @@ Divisor of degree 7</div></blockquote>
         <li class="right" >
           <a href="arithmeticgroups.html" title="Arithmetic group elements"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Darmon Points 3.1.7 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Darmon Points 3.2.1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2017, Marc Masdeu.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+        &#169; Copyright 2017, Marc Masdeu.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
   </body>
 </html>

@@ -1,33 +1,23 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Darmon Points &mdash; Darmon Points 3.1.7 documentation</title>
-    
+    <title>Darmon Points &#8212; Darmon Points 3.2.1 documentation</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '3.1.7',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/MathJax.js?config=TeX-AMS_HTML-full,../mathjax_sage.js"></script>
-    <link rel="top" title="Darmon Points 3.1.7 documentation" href="#" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Arithmetic group elements" href="arithmeticgroups.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -40,7 +30,7 @@
         <li class="right" >
           <a href="arithmeticgroups.html" title="Arithmetic group elements"
              accesskey="N">next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Darmon Points 3.1.7 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="#">Darmon Points 3.2.1 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -52,18 +42,18 @@
   <div class="section" id="darmon-points">
 <h1>Darmon Points<a class="headerlink" href="#darmon-points" title="Permalink to this headline">¶</a></h1>
 <p>For installation and basic usage instructions please see the main Github repository (<a class="reference external" href="https://github.com/mmasdeu/darmonpoints">https://github.com/mmasdeu/darmonpoints</a>).</p>
-<p>The <strong>darmonpoints</strong> package can compute many different types of what is known as Darmon points. These are known as <em>Stark-Heegner</em> points in some literature, and originated in <a class="reference internal" href="#darmon" id="id1">[Darmon]</a>. Subsequent generalizations were introduced by <a class="reference internal" href="#greenberg" id="id2">[Greenberg]</a> and <a class="reference internal" href="#trifkovic" id="id3">[Trifkovic]</a>. This has been generalized by <a class="reference internal" href="#gms1" id="id4">[GMS1]</a> to elliptic curves defined over number fields of arbitrary signature. Darmon points are attached to triples <span class="math">\((F,E,K)\)</span>, where <span class="math">\(F\)</span> is a number field, <span class="math">\(E/F\)</span> is an elliptic curve defined over <span class="math">\(F\)</span>, and <span class="math">\(K/F\)</span> is a quadratic extension. These triples must satisfy certain conditions for Darmon points to be attached to them. The article <a class="reference internal" href="#gms1" id="id5">[GMS1]</a> contains an overview of all of this. We include also a variation used in <a class="reference internal" href="#kp" id="id6">[KP]</a>.</p>
-<p>The <strong>darmonpoints</strong> package can also compute equations for some elliptic curves <span class="math">\(E/F\)</span> defined over number fields <span class="math">\(F\)</span>, as long as certain conditions are satisfied. Namely:</p>
+<p>The <strong>darmonpoints</strong> package can compute many different types of what is known as Darmon points. These are known as <em>Stark-Heegner</em> points in some literature, and originated in <a class="reference internal" href="#darmon" id="id1">[Darmon]</a>. Subsequent generalizations were introduced by <a class="reference internal" href="#greenberg" id="id2">[Greenberg]</a> and <a class="reference internal" href="#trifkovic" id="id3">[Trifkovic]</a>. This has been generalized by <a class="reference internal" href="#gms1" id="id4">[GMS1]</a> to elliptic curves defined over number fields of arbitrary signature. Darmon points are attached to triples <span class="math notranslate nohighlight">\((F,E,K)\)</span>, where <span class="math notranslate nohighlight">\(F\)</span> is a number field, <span class="math notranslate nohighlight">\(E/F\)</span> is an elliptic curve defined over <span class="math notranslate nohighlight">\(F\)</span>, and <span class="math notranslate nohighlight">\(K/F\)</span> is a quadratic extension. These triples must satisfy certain conditions for Darmon points to be attached to them. The article <a class="reference internal" href="#gms1" id="id5">[GMS1]</a> contains an overview of all of this. We include also a variation used in <a class="reference internal" href="#kp" id="id6">[KP]</a>.</p>
+<p>The <strong>darmonpoints</strong> package can also compute equations for some elliptic curves <span class="math notranslate nohighlight">\(E/F\)</span> defined over number fields <span class="math notranslate nohighlight">\(F\)</span>, as long as certain conditions are satisfied. Namely:</p>
 <ol class="arabic simple">
-<li><span class="math">\(F\)</span> has narrow class number <span class="math">\(1\)</span>.</li>
-<li>if <span class="math">\(N\)</span> is the conductor of the elliptic curve, it must admit a factorization of the form <span class="math">\(N = PDM\)</span>, where:<ol class="loweralpha">
-<li><span class="math">\(P\)</span>, <span class="math">\(D\)</span> and <span class="math">\(M\)</span> are relative coprime.</li>
-<li><span class="math">\(P\)</span> is a prime ideal of <span class="math">\(F\)</span> of prime norm.</li>
-<li><span class="math">\(D\)</span> is the discriminant of a quaternion algebra over <span class="math">\(F\)</span> which is split at only one infinite place.</li>
+<li><span class="math notranslate nohighlight">\(F\)</span> has narrow class number <span class="math notranslate nohighlight">\(1\)</span>.</li>
+<li>if <span class="math notranslate nohighlight">\(N\)</span> is the conductor of the elliptic curve, it must admit a factorization of the form <span class="math notranslate nohighlight">\(N = PDM\)</span>, where:<ol class="loweralpha">
+<li><span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(D\)</span> and <span class="math notranslate nohighlight">\(M\)</span> are relative coprime.</li>
+<li><span class="math notranslate nohighlight">\(P\)</span> is a prime ideal of <span class="math notranslate nohighlight">\(F\)</span> of prime norm.</li>
+<li><span class="math notranslate nohighlight">\(D\)</span> is the discriminant of a quaternion algebra over <span class="math notranslate nohighlight">\(F\)</span> which is split at only one infinite place.</li>
 </ol>
 </li>
 </ol>
-<p>Finally, we include the module <em>padicperiods</em>, which allows for the computation of <span class="math">\(p\)</span>-adic periods attached to two-dimensional components of the cohomology of the same arithmetic groups, and which has allowed us to find the corresponding abelian surfaces in some cases (see <a class="reference internal" href="#gm" id="id7">[GM]</a>).</p>
+<p>Finally, we include the module <em>padicperiods</em>, which allows for the computation of <span class="math notranslate nohighlight">\(p\)</span>-adic periods attached to two-dimensional components of the cohomology of the same arithmetic groups, and which has allowed us to find the corresponding abelian surfaces in some cases (see <a class="reference internal" href="#gm" id="id7">[GM]</a>).</p>
 <table class="docutils citation" frame="void" id="darmon" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
@@ -109,8 +99,6 @@
 <p>This work is licensed under a <a class="reference external" href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike
 3.0 License</a>.</p>
 <div class="toctree-wrapper compound">
-<ul class="simple">
-</ul>
 </div>
 <div class="section" id="arithmetic-groups">
 <h2>Arithmetic Groups<a class="headerlink" href="#arithmetic-groups" title="Permalink to this headline">¶</a></h2>
@@ -198,18 +186,20 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/index.txt"
+      <li><a href="_sources/index.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -228,12 +218,12 @@
         <li class="right" >
           <a href="arithmeticgroups.html" title="Arithmetic group elements"
              >next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Darmon Points 3.1.7 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="#">Darmon Points 3.2.1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2017, Marc Masdeu.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+        &#169; Copyright 2017, Marc Masdeu.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
   </body>
 </html>
