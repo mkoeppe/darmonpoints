@@ -400,8 +400,24 @@ x^2 - 4</p>
 <dd><p>Bases: <a class="reference internal" href="#darmonpoints.cohomology_abstract.CohomologyElement" title="darmonpoints.cohomology_abstract.CohomologyElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">darmonpoints.cohomology_abstract.CohomologyElement</span></code></a></p>
 <dl class="method">
 <dt id="darmonpoints.cohomology_arithmetic.ArithCohElement.BI">
-<code class="descname">BI</code><span class="sig-paren">(</span><em>a</em>, <em>j</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCohElement.BI" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">BI</code><span class="sig-paren">(</span><em>h</em>, <em>j</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCohElement.BI" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<span class="go">....:     def __init__(self, x):</span>
+<span class="go">....:         self._x = x</span>
+<span class="go">....:     @cached_method</span>
+<span class="go">....:     def f(self,*args):</span>
+<span class="go">....:         return self._x^2</span>
+<span class="gp">sage: </span><span class="n">a</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{}</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+<span class="go">4</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{((), ()): 4}</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="darmonpoints.cohomology_arithmetic.ArithCohElement.BI_old">
@@ -430,8 +446,55 @@ x^2 - 4</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="darmonpoints.cohomology_arithmetic.ArithCohElement.basic_integral">
-<code class="descname">basic_integral</code><span class="sig-paren">(</span><em>a</em>, <em>j</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCohElement.basic_integral" title="Permalink to this definition">¶</a></dt>
+<dt id="darmonpoints.cohomology_arithmetic.ArithCohElement.basic_integral_with_constant">
+<code class="descname">basic_integral_with_constant</code><span class="sig-paren">(</span><em>mat</em>, <em>j</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCohElement.basic_integral_with_constant" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<span class="go">....:     def __init__(self, x):</span>
+<span class="go">....:         self._x = x</span>
+<span class="go">....:     @cached_method</span>
+<span class="go">....:     def f(self,*args):</span>
+<span class="go">....:         return self._x^2</span>
+<span class="gp">sage: </span><span class="n">a</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{}</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+<span class="go">4</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{((), ()): 4}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.cohomology_arithmetic.ArithCohElement.basic_integral_with_constant_old">
+<code class="descname">basic_integral_with_constant_old</code><span class="sig-paren">(</span><em>a</em>, <em>j</em>, <em>mat=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCohElement.basic_integral_with_constant_old" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<span class="go">....:     def __init__(self, x):</span>
+<span class="go">....:         self._x = x</span>
+<span class="go">....:     @cached_method</span>
+<span class="go">....:     def f(self,*args):</span>
+<span class="go">....:         return self._x^2</span>
+<span class="gp">sage: </span><span class="n">a</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{}</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+<span class="go">4</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">{((), ()): 4}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.cohomology_arithmetic.ArithCohElement.evaluate_at_cusp">
+<code class="descname">evaluate_at_cusp</code><span class="sig-paren">(</span><em>cusp</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCohElement.evaluate_at_cusp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.cohomology_arithmetic.ArithCohElement.evaluate_at_cusp_list">
+<code class="descname">evaluate_at_cusp_list</code><span class="sig-paren">(</span><em>cusp_list</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.cohomology_arithmetic.ArithCohElement.evaluate_at_cusp_list" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">

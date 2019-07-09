@@ -180,7 +180,9 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="cohomology.html#darmonpoints.cohomology_arithmetic.ArithCohElement.basic_integral">basic_integral() (darmonpoints.cohomology_arithmetic.ArithCohElement method)</a>
+      <li><a href="cohomology.html#darmonpoints.cohomology_arithmetic.ArithCohElement.basic_integral_with_constant">basic_integral_with_constant() (darmonpoints.cohomology_arithmetic.ArithCohElement method)</a>
+</li>
+      <li><a href="cohomology.html#darmonpoints.cohomology_arithmetic.ArithCohElement.basic_integral_with_constant_old">basic_integral_with_constant_old() (darmonpoints.cohomology_arithmetic.ArithCohElement method)</a>
 </li>
       <li><a href="distributions.html#darmonpoints.ocmodule.OCVn.basis">basis() (darmonpoints.ocmodule.OCVn method)</a>
 
@@ -238,10 +240,10 @@
       </ul></li>
       <li><a href="cohomology.html#darmonpoints.cohomology_abstract.CohomologyElement">CohomologyElement (class in darmonpoints.cohomology_abstract)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="cohomology.html#darmonpoints.cohomology_abstract.CohomologyGroup">CohomologyGroup (class in darmonpoints.cohomology_abstract)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="distributions.html#darmonpoints.representations.CoIndAction">CoIndAction (class in darmonpoints.representations)</a>
 </li>
       <li><a href="distributions.html#darmonpoints.representations.CoIndElement">CoIndElement (class in darmonpoints.representations)</a>
@@ -269,6 +271,8 @@
       <li><a href="arithmeticgroups.html#darmonpoints.sarithgroup.BigArithGroup_class.coset_reps">coset_reps() (darmonpoints.sarithgroup.BigArithGroup_class method)</a>
 </li>
       <li><a href="internals.html#darmonpoints.util.covolume">covolume() (in module darmonpoints.util)</a>
+</li>
+      <li><a href="arithmeticgroups.html#darmonpoints.sarithgroup.BigArithGroup_class.cusp_reduction_table">cusp_reduction_table() (darmonpoints.sarithgroup.BigArithGroup_class method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -384,14 +388,14 @@
       </ul></li>
       <li><a href="arithmeticgroups.html#darmonpoints.arithgroup.ArithGroup_nf_quaternion.element_of_prime_norm">element_of_prime_norm() (darmonpoints.arithgroup.ArithGroup_nf_quaternion method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="arithmeticgroups.html#darmonpoints.arithgroup_element.ArithGroupElement.embed">embed() (darmonpoints.arithgroup_element.ArithGroupElement method)</a>
 
       <ul>
         <li><a href="arithmeticgroups.html#darmonpoints.sarithgroup.BigArithGroup_class.embed">(darmonpoints.sarithgroup.BigArithGroup_class method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="arithmeticgroups.html#darmonpoints.sarithgroup.BigArithGroup_class.embed_matrix">embed_matrix() (darmonpoints.sarithgroup.BigArithGroup_class method)</a>
 </li>
       <li><a href="arithmeticgroups.html#darmonpoints.arithgroup.ArithGroup_nf_quaternion.embed_order">embed_order() (darmonpoints.arithgroup.ArithGroup_nf_quaternion method)</a>
@@ -419,6 +423,10 @@
 </li>
       </ul></li>
       <li><a href="cohomology.html#darmonpoints.cohomology_abstract.CohomologyElement.evaluate_and_identity">evaluate_and_identity() (darmonpoints.cohomology_abstract.CohomologyElement method)</a>
+</li>
+      <li><a href="cohomology.html#darmonpoints.cohomology_arithmetic.ArithCohElement.evaluate_at_cusp">evaluate_at_cusp() (darmonpoints.cohomology_arithmetic.ArithCohElement method)</a>
+</li>
+      <li><a href="cohomology.html#darmonpoints.cohomology_arithmetic.ArithCohElement.evaluate_at_cusp_list">evaluate_at_cusp_list() (darmonpoints.cohomology_arithmetic.ArithCohElement method)</a>
 </li>
       <li><a href="distributions.html#darmonpoints.representations.CoIndElement.evaluate_at_identity">evaluate_at_identity() (darmonpoints.representations.CoIndElement method)</a>
 
@@ -452,11 +460,13 @@
 </li>
       <li><a href="internals.html#darmonpoints.util.find_containing_affinoid">find_containing_affinoid() (in module darmonpoints.util)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="integration.html#darmonpoints.limits.find_lambda">find_lambda() (in module darmonpoints.limits)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="integration.html#darmonpoints.limits.find_limits">find_limits() (in module darmonpoints.limits)</a>
+</li>
+      <li><a href="arithmeticgroups.html#darmonpoints.sarithgroup.BigArithGroup_class.find_matrix_from_cusp">find_matrix_from_cusp() (darmonpoints.sarithgroup.BigArithGroup_class method)</a>
 </li>
       <li><a href="cohomology.html#darmonpoints.cohomology_arithmetic.find_newans">find_newans() (in module darmonpoints.cohomology_arithmetic)</a>
 </li>
@@ -550,10 +560,10 @@
 </li>
       <li><a href="internals.html#darmonpoints.util.get_heegner_params">get_heegner_params() (in module darmonpoints.util)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="arithmeticgroups.html#darmonpoints.sarithgroup.BigArithGroup_class.get_homology_kernel">get_homology_kernel() (darmonpoints.sarithgroup.BigArithGroup_class method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="internals.html#darmonpoints.util.get_j_invariant">get_j_invariant() (in module darmonpoints.util)</a>
 </li>
       <li><a href="cohomology.html#darmonpoints.cohomology_arithmetic.ArithCohElement.get_liftee">get_liftee() (darmonpoints.cohomology_arithmetic.ArithCohElement method)</a>
@@ -567,6 +577,8 @@
       <li><a href="cohomology.html#darmonpoints.cohomology_arithmetic.get_overconvergent_class_matrices">get_overconvergent_class_matrices() (in module darmonpoints.cohomology_arithmetic)</a>
 </li>
       <li><a href="cohomology.html#darmonpoints.cohomology_arithmetic.get_overconvergent_class_quaternionic">get_overconvergent_class_quaternionic() (in module darmonpoints.cohomology_arithmetic)</a>
+</li>
+      <li><a href="arithmeticgroups.html#darmonpoints.sarithgroup.BigArithGroup_class.get_P1List">get_P1List() (darmonpoints.sarithgroup.BigArithGroup_class method)</a>
 </li>
       <li><a href="arithmeticgroups.html#darmonpoints.sarithgroup.BigArithGroup_class.get_pseudo_orthonormal_homology">get_pseudo_orthonormal_homology() (darmonpoints.sarithgroup.BigArithGroup_class method)</a>
 </li>

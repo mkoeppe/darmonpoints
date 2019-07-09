@@ -582,6 +582,27 @@ sage: b.quaternion_rep # random #  optional - magma
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.cusp_reduction_table">
+<code class="descname">cusp_reduction_table</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.cusp_reduction_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<span class="go">....:     def __init__(self, x):</span>
+<span class="go">....:         self._x = x</span>
+<span class="go">....:     @cached_method</span>
+<span class="go">....:     def f(self):</span>
+<span class="go">....:         return self._x^2</span>
+<span class="gp">sage: </span><span class="n">a</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span>
+<span class="go">None</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+<span class="go">4</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
 <dt id="darmonpoints.sarithgroup.BigArithGroup_class.do_tilde">
 <code class="descname">do_tilde</code><span class="sig-paren">(</span><em>g</em>, <em>wp=None</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.do_tilde" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -629,6 +650,11 @@ sage: b.quaternion_rep # random #  optional - magma
 </dd></dl>
 
 <dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.find_matrix_from_cusp">
+<code class="descname">find_matrix_from_cusp</code><span class="sig-paren">(</span><em>a</em>, <em>c</em><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.find_matrix_from_cusp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="darmonpoints.sarithgroup.BigArithGroup_class.get_BT_reps">
 <code class="descname">get_BT_reps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.get_BT_reps" title="Permalink to this definition">¶</a></dt>
 <dd><p>EXAMPLES:</p>
@@ -652,6 +678,27 @@ sage: b.quaternion_rep # random #  optional - magma
 <dl class="method">
 <dt id="darmonpoints.sarithgroup.BigArithGroup_class.get_BT_reps_twisted">
 <code class="descname">get_BT_reps_twisted</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.get_BT_reps_twisted" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXAMPLES:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<span class="go">....:     def __init__(self, x):</span>
+<span class="go">....:         self._x = x</span>
+<span class="go">....:     @cached_method</span>
+<span class="go">....:     def f(self):</span>
+<span class="go">....:         return self._x^2</span>
+<span class="gp">sage: </span><span class="n">a</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">sage: </span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span>
+<span class="go">None</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+<span class="go">4</span>
+<span class="gp">sage: </span><span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cache</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="darmonpoints.sarithgroup.BigArithGroup_class.get_P1List">
+<code class="descname">get_P1List</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darmonpoints.sarithgroup.BigArithGroup_class.get_P1List" title="Permalink to this definition">¶</a></dt>
 <dd><p>EXAMPLES:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">sage: </span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
 <span class="go">....:     def __init__(self, x):</span>
